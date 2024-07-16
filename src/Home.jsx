@@ -1,11 +1,11 @@
-
 import React from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 const Home = () => {
   const [text] = useTypewriter({
     words: ["Full-Stack Programmer"],
-    loop: 0, // infinite
+    loop: 0,
     typeSpeed: 70,
     deleteSpeed: 50,
     delaySpeed: 1000,
@@ -21,13 +21,10 @@ const Home = () => {
           <Cursor cursorColor="blue" />
         </div>
         <div className="flex space-x-4 mt-4 social-media">
-          <div>
+          <div className="text-black-600 text-2xl">
             <a href="https://www.linkedin.com/in/alexandre-ndanyuzwe-cyiza-766644210/">
-              <img
-                className="w-5 h-5"
-                src="/images/icons8-linkedin-logo-48.png"
-                alt="LinkedIn"
-              />
+            
+            <FaLinkedinIn />
             </a>
           </div>
           <div>
