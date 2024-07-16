@@ -60,3 +60,27 @@
 // }
 
 // export default NavBar;
+
+import { TiHomeOutline } from "react-icons/ti";
+import { LuUser2 } from "react-icons/lu";
+
+
+
+const NavBar = () => {
+    return (
+        <nav>
+            <ul>
+                <li><TiHomeOutline /><span>Home</span></li>
+                <li><span>About</span></li>
+                <li><span>Achievements</span></li>
+                <li><span>Certificate</span></li>
+                <li><span>Projects</span></li>
+                <li><span>Blogs</span></li>
+                <li><span>Services</span></li>
+                <li><span>Contacts</span></li>
+            </ul>
+        </nav>
+    )
+}
+
+export default NavBar;

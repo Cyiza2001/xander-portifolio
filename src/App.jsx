@@ -8,13 +8,14 @@ import Home from "./Home";
 // import Blogs from './Blogs';
 // import Services from './Services';
 // import Contacts from './Contacts';
-// import NavBar from './NavBar';
+
+import NavBars from "./NavBars";
 
 export default function App() {
   return (
     <Router>
       <div className="flex">
-        {/* <NavBar /> */}
+        <NavBars />
         <Routes>
           <Route path="/" element={<Home/>} />
           {/* <Route path="/about" component={About} />
