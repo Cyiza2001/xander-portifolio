@@ -52,7 +52,7 @@ const Home = () => {
       </div>
 
       <div
-        className={`sm:hidden absolute top-0 left-0 w-24 bottom-0 bg-red-600  z-50 ${
+        className={`sm:hidden absolute top-0 left-0 w-24 bottom-0 bg-transparent  z-50 ${
           isNavBarVisible ? "block" : "hidden"
         }`}
       >
