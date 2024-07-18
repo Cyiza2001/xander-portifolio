@@ -1,6 +1,8 @@
 import React from "react";
 import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import picture from "/images/pic.png"
+
 
 const About = () => {
   return (
@@ -15,15 +17,15 @@ const About = () => {
       </div>
 
       <div className="flex flex-row gap-1 items-center my-6 font-bold">
-        Trust is built with consistence{" "}
+        Trust is built with consistency{" "}
         <span className=" text-yellow-400">
           <FaGlassCheers />
         </span>
       </div>
 
-      <div className="flex flex-row gap-10">
-        <div>
-          <img src="/images/mypic.png" alt="my pic" />
+      <div className="relative flex flex-row gap-6">
+        <div className="relative w-96 h-64  ">
+          <img src={picture} alt="my pic" className="absolute top-0 right-0 w-96" />
         </div>
         <div className="flex flex-col items-start justify-start">
           <div className="flex text-gray-500 font-bold text-2xl mb-3">
@@ -40,7 +42,7 @@ const About = () => {
             </div>
             <div className="font-bold">A dedicated Software developer.</div>
           </div>
-
+          <div className="flex flex-col gap-4">
           <div className="flex flex-row items-center gap-1">
             <div className="text-blue-700 text-2xl">
               <IoIosArrowForward />
@@ -73,6 +75,7 @@ const About = () => {
               September
               <span className="w-px h-4 bg-black mx-1 font-bold"></span>
             </div>
+          </div>
           </div>
         </div>
       </div>

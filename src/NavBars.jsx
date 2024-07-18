@@ -10,6 +10,7 @@ import { TbLogs } from "react-icons/tb";
 import { GrServices } from "react-icons/gr";
 import { FaRegEnvelope } from "react-icons/fa6";
 
+
 const data = [
   { name: "Home", icon: <TiHomeOutline />, id: "Home" },
   { name: "About", icon: <LuUser2 />, id: "About" },
