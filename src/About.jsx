@@ -9,10 +9,10 @@ const About = () => {
     <div className="flex flex-col justify-center  items-center">
       <div>
         <div className="flex font-bold text-4xl mt-14 mb-6">ABOUT</div>
-        <div className="flex items-center justify-center">
-          <div className="flex-grow border-t border-blue-300"></div>
-          <span className="mx-4 text-blue-600 font-bold border-red-800"></span>
-          <div className="flex-grow border-t border-blue-300"></div>
+        <div className="flex">
+         <div className="flex justify-center items-center w-full rounded bg-gray-200 " style={{height:"2px"}}>
+          <div className="h-1 rounded bg-blue-700  w-12"></div>
+         </div>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ const About = () => {
               <IoIosArrowForward />
             </div>
             <div className="font-bold">"My Heart is in the work"</div>
-            <div className="text-blue-600"> -A. Carnegie</div>
+            <div className="text-blue-600 font-medium"> -A. Carnegie</div>
           </div>
           <div className="flex flex-row items-center gap-1">
             <div className="text-blue-700 text-2xl">
@@ -102,7 +102,7 @@ const About = () => {
               <IoIosArrowForward />
             </div>
             <div className="font-bold">"Decline is a Choice"</div>
-            <div className="text-blue-600">DeSantis</div>
+            <div className="text-blue-700 font-medium">DeSantis</div>
           </div>
           <div className="flex flex-row items-center gap-1">
             <div className="text-blue-700 text-2xl">
@@ -127,14 +127,6 @@ const About = () => {
       <div className="flex  my-6 font-normal">
       Languages & Frameworks & Skills
       </div>
-
-      <div class="skill-bar">
-  <div class="skill-name">HTML</div>
-  <div class="relative w-full bg-gray-200 rounded">
-    <div class="absolute inset-0 flex items-center justify-center text-blue-700 font-semibold" style="width: 80%; background-color: #4A90E2;">80%</div>
-  </div>
-</div>
-
 
     </div>
 
