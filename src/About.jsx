@@ -20,7 +20,7 @@ const About = () => {
       "Empowering the Future: Merging Software Engineering and Cutting-Edge Technologies" - Cyiza
       </div>
 
-      <div className="relative flex flex-row gap-6">
+      <div className="relative flex sm:flex-row flex-col gap-6">
         <div className="relative w-96 h-64  ">
           <img src={picture} alt="my pic" className="absolute top-0 right-0 w-96" />
         </div>
