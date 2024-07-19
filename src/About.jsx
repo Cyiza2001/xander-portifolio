@@ -16,11 +16,8 @@ const About = () => {
         </div>
       </div>
 
-      <div className="flex flex-row gap-1 items-center my-6 font-bold">
-        Trust is built with consistency{" "}
-        <span className=" text-yellow-400">
-          <FaGlassCheers />
-        </span>
+      <div className="flex  my-6 font-bold">
+      "Empowering the Future: Merging Software Engineering and Cutting-Edge Technologies" - Cyiza
       </div>
 
       <div className="relative flex flex-row gap-6">
@@ -31,7 +28,7 @@ const About = () => {
           <div className="flex text-gray-500 font-bold text-2xl mb-3">
             Biography
           </div>
-          <div className="flex flex-row ">
+          <div className="flex flex-row mb-3 ">
             <div className="flex flex-row items-center font-bold ">
               Ndanyuzwe Cyiza Alexandre
               <span className="w-px h-4 bg-black mx-1"></span>
@@ -40,7 +37,7 @@ const About = () => {
               Life Long Learner
               <span className="w-px h-4 bg-black mx-1 font-bold"></span>
             </div>
-            <div className="font-bold">A dedicated Software developer.</div>
+            <div className="font-bold">Dedicated Software developer.</div>
           </div>
           <div className="flex flex-col gap-4">
           <div className="flex flex-row items-center gap-1">
@@ -61,8 +58,26 @@ const About = () => {
             <div className="text-blue-700 text-2xl">
               <IoIosArrowForward />
             </div>
+            <div className="font-bold">"My Heart is in the work"</div>
+            <div className="text-blue-600"> -A. Carnegie</div>
+          </div>
+          <div className="flex flex-row items-center gap-1">
+            <div className="text-blue-700 text-2xl">
+              <IoIosArrowForward />
+            </div>
             <div className="font-bold">Interested In:</div>
             <div>Software Engineering & AI & Music</div>
+          </div>
+
+          <div className="flex flex-row items-center gap-1">
+            <div className="text-blue-700 text-2xl">
+              <IoIosArrowForward />
+            </div>
+            <div className="flex flex-row  items-center gap-2 font-bold">  Trust is built with consistency{" "}
+        <span className=" text-red-700">
+          <FaGlassCheers />
+        </span></div>
+      
           </div>
 
           <div className="flex flex-row items-center gap-1">
@@ -76,10 +91,54 @@ const About = () => {
               <span className="w-px h-4 bg-black mx-1 font-bold"></span>
             </div>
           </div>
+          <div className="flex flex-row items-center gap-1">
+            <div className="text-blue-700 text-2xl">
+              <IoIosArrowForward />
+            </div>
+            <div className="font-bold">Embrace the journey.</div>
+          </div>
+          <div className="flex flex-row items-center gap-1">
+            <div className="text-blue-700 text-2xl">
+              <IoIosArrowForward />
+            </div>
+            <div className="font-bold">"Decline is a Choice"</div>
+            <div className="text-blue-600">DeSantis</div>
+          </div>
+          <div className="flex flex-row items-center gap-1">
+            <div className="text-blue-700 text-2xl">
+              <IoIosArrowForward />
+            </div>
+            <div className="font-bold">Days:</div>
+            <div>Sunday-Friday</div>
+          </div>
           </div>
         </div>
       </div>
+      {/* ******************************************KNOWLEDGE AND SKILLS*************************************************** */}
+      <div>
+        <div className="flex font-bold text-4xl mt-14 mb-6">KNOWLEDGE AND SKILLS</div>
+        <div className="flex items-center justify-center">
+          <div className="flex-grow border-t border-blue-300"></div>
+          <span className="mx-4 text-blue-600 font-bold border-red-800"></span>
+          <div className="flex-grow border-t border-blue-300"></div>
+        </div>
+      </div>
+
+      <div className="flex  my-6 font-normal">
+      Languages & Frameworks & Skills
+      </div>
+
+      <div class="skill-bar">
+  <div class="skill-name">HTML</div>
+  <div class="relative w-full bg-gray-200 rounded">
+    <div class="absolute inset-0 flex items-center justify-center text-blue-700 font-semibold" style="width: 80%; background-color: #4A90E2;">80%</div>
+  </div>
+</div>
+
+
     </div>
+
+    
   );
 };
 export default About;
