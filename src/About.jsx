@@ -128,6 +128,15 @@ const About = () => {
       Languages & Frameworks & Skills
       </div>
       {/************************************** *PROGRESS BARS***************** ************/}
+      <div className="flex flex-row gap-4">
+      <div className="flex flex-col gap-2">
+     <div className="flex flex-row w-full
+      items-end bg-red-600 gap-96">
+     <div>HTML</div>
+     <div>96%</div>
+     </div>
+     <div className=""></div>
+     </div>
      <div className="flex flex-col gap-2">
      <div className="flex flex-row w-full
       items-end bg-red-600 gap-96">
@@ -136,6 +145,8 @@ const About = () => {
      </div>
      <div className=""></div>
      </div>
+      </div>
+  
 
     </div>
 
