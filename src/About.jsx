@@ -11,6 +11,8 @@ const progress = [
   {skill1:"Cloudinary Js" , percentage1: "96%",skill2:"Multer Js" , percentage2: "92%"},
   
   {skill1:"React Js" , percentage1: "91%", skill2:"jest & Supertest" , percentage2: "80%"},
+    
+    {skill1:"React Js" , percentage1: "91%"}
 
 ]
 
