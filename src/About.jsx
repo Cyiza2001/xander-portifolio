@@ -3,6 +3,17 @@ import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import picture from "/images/pic.png"
 
+const progress = [
+  {skill1:"HTML & CSS" , percentage1: "98%", skill2:"Node Js" , percentage2: "90%"},
+ 
+  {skill1:"Express Js" , percentage1: "92%",skill2:"MongoDb" , percentage2: "84%"},
+  
+  {skill1:"Cloudinary Js" , percentage1: "96%",skill2:"Multer Js" , percentage2: "92%"},
+  
+  {skill1:"React Js" , percentage1: "91%", skill2:"jest & Supertest" , percentage2: "80%"},
+
+]
+
 
 const About = () => {
   return (
@@ -27,17 +38,17 @@ const About = () => {
           <img src={picture} alt="my pic" className="absolute top-0 right-0 w-96" />
         </div>
         <div className="flex flex-col items-start justify-start">
-          <div className="flex text-gray-500 font-bold text-xl mb-3">
+          <div className="flex text-gray-500 font-bold text-2xl mb-3">
             Biography
           </div>
-          <div className="flex flex-row mb-3 text-xs sm:text-base ">
+          <div className="flex flex-row mb-3 text-sm sm:text-base ">
             <div className="flex flex-row items-center font-bold  ">
               Ndanyuzwe Cyiza Alexandre
-              <span className="w-px h-4 bg-black mx-1"></span>
+              <span className="w-px sm:h-4 h-8 bg-black mx-1"></span>
             </div>
             <div className="flex flex-row items-center font-bold ">
               Life Long Learner
-              <span className="w-px h-4 bg-black mx-1 font-bold"></span>
+              <span className="w-px sm:h-4 h-8 bg-black mx-1 font-bold"></span>
             </div>
             <div className="font-bold">Dedicated Software developer.</div>
           </div>
@@ -117,6 +128,7 @@ const About = () => {
         </div>
       </div>
       {/* ******************************************KNOWLEDGE AND SKILLS*************************************************** */}
+  
       <div className="flex flex-col justify-center items-center ">
         <div className="flex font-bold text-2xl mt-14 mb-6">KNOWLEDGE AND SKILLS</div>
         <div className="flex " style={{width:"122.83px"}}>
@@ -130,30 +142,37 @@ const About = () => {
       </div>
 
       {/************************************** *PROGRESS BARS***************** ************/}
-      
-            <div className="flex flex-row gap-4 w-screen px-24">
-            <div className="flex flex-col gap-2 w-1/2">
-              <div className="flex flex-row justify-between"> <p>react js</p>
-              <p>97%</p>
-              </div>
-             <div className="bg-red-700 rounded h-3">
-             <div className="bg-blue-700 h-3 rounded " style={{width:"40%"}}></div>
-             </div>
-             </div>
-
-
-            <div className="flex flex-col gap-2 w-1/2">
-              <div className="flex flex-row justify-between"> <p>react js</p>
-              <p>97%</p>
-              </div>
-             <div className="bg-white rounded h-3">
-             <div className="bg-blue-700 h-3 rounded " style={{width:"97%"}}></div>
-             </div>
-               
-          
+      {
+      progress.map((el)=>{
+        return(
+          <div className="flex sm:flex-row flex-col gap-7 w-screen px-24 justify-center items-center">
+          <div className="flex flex-col gap-2 sm:w-1/2 w-screen pr-14 pl-6">
+            <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
+             <p>{el.percentage1}</p>
             </div>
+           <div className=" bg-gray-200  h-2">
+           <div className="bg-blue-700 h-2  " style={{width:`${el.percentage1}`}}></div>
+           </div>
+          </div>
+
+
+          <div className="flex flex-col gap-2 sm:w-1/2 w-screen pr-14 pl-6">
+            <div className="flex flex-row justify-between"> <p>{el.skill2}</p>
+            <p>{el.percentage2}</p>
+            </div>
+           <div className=" bg-gray-200  h-2">
+           <div className="bg-blue-700 h-2  " style={{width:`${el.percentage2}`}}></div>
+           </div>
+             
+        
+          </div>
+       
+          </div>
+        )
+
+      })
+    }
          
-            </div>
 
     </div>
 
