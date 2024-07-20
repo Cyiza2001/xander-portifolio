@@ -9,13 +9,13 @@ const About = () => {
   
     <div className="flex flex-col px-4">
       <div className="flex flex-col justify-center items-center" >
-        <div className="flex font-bold text-4xl mt-14 mb-6">ABOUT</div>
+        <div className="flex font-bold text-2xl mt-14 mb-6">ABOUT</div>
         <div className="flex " style={{width:"122.83px"}}>
          <div className="flex justify-center items-center w-full rounded bg-gray-200 " style={{height:"2px"}}>
           <div className="h-1 rounded bg-blue-700  w-12"></div>
          </div>
         </div>
-        <p className="flex  my-6 font-bold text-sm ">
+        <p className="flex  my-6 font-bold text-sm  sm:text-xl">
       "Empowering the Future: Merging Software Engineering and Cutting-Edge Technologies" - Cyiza
       </p>
       </div>
@@ -30,8 +30,8 @@ const About = () => {
           <div className="flex text-gray-500 font-bold text-xl mb-3">
             Biography
           </div>
-          <div className="flex flex-row mb-3 text-xs ">
-            <div className="flex flex-row items-center font-bold ">
+          <div className="flex flex-row mb-3 text-xs sm:text-base ">
+            <div className="flex flex-row items-center font-bold  ">
               Ndanyuzwe Cyiza Alexandre
               <span className="w-px h-4 bg-black mx-1"></span>
             </div>
@@ -118,7 +118,7 @@ const About = () => {
       </div>
       {/* ******************************************KNOWLEDGE AND SKILLS*************************************************** */}
       <div className="flex flex-col justify-center items-center ">
-        <div className="flex font-bold text-4xl mt-14 mb-6">KNOWLEDGE AND SKILLS</div>
+        <div className="flex font-bold text-2xl mt-14 mb-6">KNOWLEDGE AND SKILLS</div>
         <div className="flex " style={{width:"122.83px"}}>
          <div className="flex justify-center items-center w-full rounded bg-gray-200 " style={{height:"2px"}}>
           <div className="h-1 rounded bg-blue-700  w-12"></div>
@@ -146,7 +146,7 @@ const About = () => {
               <div className="flex flex-row justify-between"> <p>react js</p>
               <p>97%</p>
               </div>
-             <div className="bg-red-700 rounded h-3">
+             <div className="bg-white rounded h-3">
              <div className="bg-blue-700 h-3 rounded " style={{width:"97%"}}></div>
              </div>
                
