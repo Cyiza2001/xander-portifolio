@@ -6,7 +6,8 @@ import picture from "/images/pic.png"
 
 const About = () => {
   return (
-    <div className="flex flex-col justify-center  items-center">
+  
+    <div className="flex flex-col px-4">
       <div className="flex flex-col justify-center items-center" >
         <div className="flex font-bold text-4xl mt-14 mb-6">ABOUT</div>
         <div className="flex " style={{width:"122.83px"}}>
@@ -14,21 +15,22 @@ const About = () => {
           <div className="h-1 rounded bg-blue-700  w-12"></div>
          </div>
         </div>
-      </div>
-
-      <div className="flex  my-6 font-bold">
+        <p className="flex  my-6 font-bold text-sm ">
       "Empowering the Future: Merging Software Engineering and Cutting-Edge Technologies" - Cyiza
+      </p>
       </div>
 
-      <div className="relative flex sm:flex-row flex-col gap-6">
+      
+
+      <div className=" flex sm:flex-row flex-col relative gap-6">
         <div className="relative w-96 h-64  ">
           <img src={picture} alt="my pic" className="absolute top-0 right-0 w-96" />
         </div>
         <div className="flex flex-col items-start justify-start">
-          <div className="flex text-gray-500 font-bold text-2xl mb-3">
+          <div className="flex text-gray-500 font-bold text-xl mb-3">
             Biography
           </div>
-          <div className="flex flex-row mb-3 ">
+          <div className="flex flex-row mb-3 text-xs ">
             <div className="flex flex-row items-center font-bold ">
               Ndanyuzwe Cyiza Alexandre
               <span className="w-px h-4 bg-black mx-1"></span>
@@ -122,31 +124,36 @@ const About = () => {
           <div className="h-1 rounded bg-blue-700  w-12"></div>
          </div>
         </div>
+        <p className="flex  my-6 font-normal">
+      Languages & Frameworks & Skills
+      </p>
       </div>
 
-      <div className="flex  my-6 font-normal">
-      Languages & Frameworks & Skills
-      </div>
       {/************************************** *PROGRESS BARS***************** ************/}
-      <div className="flex flex-row gap-4">
-      <div className="flex flex-col gap-2">
-     <div className="flex flex-row w-full
-      items-end bg-red-600 gap-96">
-     <div>HTML</div>
-     <div>96%</div>
-     </div>
-     <div className=""></div>
-     </div>
-     <div className="flex flex-col gap-2">
-     <div className="flex flex-row w-full
-      items-end bg-red-600 gap-96">
-     <div>HTML</div>
-     <div>96%</div>
-     </div>
-     <div className=""></div>
-     </div>
-      </div>
-  
+      
+            <div className="flex flex-row gap-4 w-screen px-24">
+            <div className="flex flex-col gap-2 w-1/2">
+              <div className="flex flex-row justify-between"> <p>react js</p>
+              <p>97%</p>
+              </div>
+             <div className="bg-red-700 rounded h-3">
+             <div className="bg-blue-700 h-3 rounded " style={{width:"40%"}}></div>
+             </div>
+             </div>
+
+
+            <div className="flex flex-col gap-2 w-1/2">
+              <div className="flex flex-row justify-between"> <p>react js</p>
+              <p>97%</p>
+              </div>
+             <div className="bg-red-700 rounded h-3">
+             <div className="bg-blue-700 h-3 rounded " style={{width:"97%"}}></div>
+             </div>
+               
+          
+            </div>
+         
+            </div>
 
     </div>
 
