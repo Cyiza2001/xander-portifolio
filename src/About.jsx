@@ -145,7 +145,7 @@ const About = () => {
       {
       progress.map((el)=>{
         return(
-          <div className="flex sm:flex-row flex-col sm:gap-7 gap-2 w-screen px-24 justify-center items-center">
+          <div className="flex sm:flex-row flex-col sm:gap-7 w-screen px-24 justify-center items-center">
           <div className="flex flex-col gap-2 sm:w-1/2 w-screen pr-14 pl-6">
             <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
              <p>{el.percentage1}</p>
