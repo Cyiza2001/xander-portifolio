@@ -56,7 +56,7 @@ const About = () => {
               <span className="w-px sm:h-4 h-8 bg-black mx-1"></span>
             </div>
             <div className="flex flex-row items-center font-bold ">
-              Life Long Learner
+              Lifelong Learner
               <span className="w-px sm:h-4 h-8 bg-black mx-1 font-bold"></span>
             </div>
             <div className="font-bold">Dedicated Software developer.</div>
@@ -152,11 +152,11 @@ const About = () => {
 
       {/************************************** *PROGRESS BARS***************** ************/}
       
-         <div className="flex flex-wrap gap-4  w-screen sm:px-24">
+         <div className="flex flex-wrap gap-2  w-screen sm:px-24">
       {progress.map((el, index)=>{
         return(
          
-          <div  key={index} className="flex flex-col gap-2 sm:w-1/2 w-screen   pl-6 pr-14 sm:px-0 mb-4">
+          <div  key={index} className="flex flex-col gap-2 sm:w-1/2   w-screen   pl-6 pr-14 sm:px-0 ">
             <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
              <p>{el.percentage1}</p>
             </div>
