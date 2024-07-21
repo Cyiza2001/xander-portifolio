@@ -3,16 +3,24 @@ import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import picture from "/images/pic.png"
 
-const progress = [
-  {skill1:"HTML & CSS" , percentage1: "98%", skill2:"Node Js" , percentage2: "90%"},
+// const progress = [
+//   {skill1:"HTML & CSS" , percentage1: "98%", skill2:"Node Js" , percentage2: "90%"},
  
-  {skill1:"Express Js" , percentage1: "92%",skill2:"MongoDb" , percentage2: "84%"},
+//   {skill1:"Express Js" , percentage1: "92%",skill2:"MongoDb" , percentage2: "84%"},
   
-  {skill1:"Cloudinary Js" , percentage1: "96%",skill2:"Multer Js" , percentage2: "92%"},
+//   {skill1:"Cloudinary Js" , percentage1: "96%",skill2:"Multer Js" , percentage2: "92%"},
   
-  {skill1:"React Js" , percentage1: "91%", skill2:"jest & Supertest" , percentage2: "80%"},
-    
-    {skill1:"React Js" , percentage1: "91%"}
+//   {skill1:"React Js" , percentage1: "91%", skill2:"jest & Supertest" , percentage2: "80%"},
+
+// ]
+const progress = [
+  {skill1:"HTML & CSS" , percentage1: "98%"},
+ 
+  {skill1:"HTML & CSS" , percentage1: "98%"},
+  
+  {skill1:"HTML & CSS" , percentage1: "98%"},
+  
+  {skill1:"HTML & CSS" , percentage1: "98%"},
 
 ]
 
@@ -147,8 +155,18 @@ const About = () => {
       {
       progress.map((el)=>{
         return(
-          <div className="flex sm:flex-row flex-col sm:gap-7 w-screen px-24 justify-center items-center">
-          <div className="flex flex-col gap-2 sm:w-1/2 w-screen pr-14 pl-6">
+          // <div className="flex sm:flex-row flex-col  sm:gap-7 w-screen sm:px-24">
+          // <div className="flex flex-col gap-2 sm:w-1/2 w-screen  pl-6 pr-14 sm:px-0">
+          //   <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
+          //    <p>{el.percentage1}</p>
+          //   </div>
+          //  <div className=" bg-gray-200  h-2">
+          //  <div className="bg-blue-700 h-2  " style={{width:`${el.percentage1}`}}></div>
+          //  </div>
+          // </div>
+
+          <div className="flex w-screen sm:px-24">
+          <div className="flex flex-col gap-2 sm:w-1/2 w-screen  pl-6 pr-14 sm:px-0">
             <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
              <p>{el.percentage1}</p>
             </div>
@@ -158,7 +176,10 @@ const About = () => {
           </div>
 
 
-          <div className="flex flex-col gap-2 sm:w-1/2 w-screen pr-14 pl-6">
+          
+
+
+          {/* <div className="flex flex-col gap-2 sm:w-1/2 w-screen  pl-6 pr-14 sm:px-0">
             <div className="flex flex-row justify-between"> <p>{el.skill2}</p>
             <p>{el.percentage2}</p>
             </div>
@@ -167,7 +188,7 @@ const About = () => {
            </div>
              
         
-          </div>
+          </div> */}
        
           </div>
         )
