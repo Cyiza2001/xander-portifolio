@@ -19,8 +19,7 @@ const progress = [
   {skill1:"HTML & CSS" , percentage1: "98%"},
   
   {skill1:"HTML & CSS" , percentage1: "98%"},
-  
-  {skill1:"HTML & CSS" , percentage1: "98%"},
+ 
 
 ]
 
@@ -152,21 +151,12 @@ const About = () => {
       </div>
 
       {/************************************** *PROGRESS BARS***************** ************/}
-      {
-      progress.map((el)=>{
+      
+         <div className="flex flex-wrap gap-4  w-screen sm:px-24">
+      {progress.map((el, index)=>{
         return(
-          // <div className="flex sm:flex-row flex-col  sm:gap-7 w-screen sm:px-24">
-          // <div className="flex flex-col gap-2 sm:w-1/2 w-screen  pl-6 pr-14 sm:px-0">
-          //   <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
-          //    <p>{el.percentage1}</p>
-          //   </div>
-          //  <div className=" bg-gray-200  h-2">
-          //  <div className="bg-blue-700 h-2  " style={{width:`${el.percentage1}`}}></div>
-          //  </div>
-          // </div>
-
-          <div className="flex w-screen sm:px-24">
-          <div className="flex flex-col gap-2 sm:w-1/2 w-screen  pl-6 pr-14 sm:px-0">
+         
+          <div  key={index} className="flex flex-col gap-2 sm:w-1/2 w-screen   pl-6 pr-14 sm:px-0 mb-4">
             <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
              <p>{el.percentage1}</p>
             </div>
@@ -174,27 +164,11 @@ const About = () => {
            <div className="bg-blue-700 h-2  " style={{width:`${el.percentage1}`}}></div>
            </div>
           </div>
-
-
-          
-
-
-          {/* <div className="flex flex-col gap-2 sm:w-1/2 w-screen  pl-6 pr-14 sm:px-0">
-            <div className="flex flex-row justify-between"> <p>{el.skill2}</p>
-            <p>{el.percentage2}</p>
-            </div>
-           <div className=" bg-gray-200  h-2">
-           <div className="bg-blue-700 h-2  " style={{width:`${el.percentage2}`}}></div>
-           </div>
-             
-        
-          </div> */}
-       
-          </div>
         )
 
-      })
-    }
+      })}
+      </div>
+    
          
 
     </div>
