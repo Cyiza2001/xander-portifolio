@@ -14,11 +14,16 @@ import picture from "/images/pic.png"
 
 // ]
 const progress = [
-  {skill1:"HTML & CSS" , percentage1: "98%"},
+  {skill:"HTML & CSS" , percentage: "98%"},
  
-  {skill1:"HTML & CSS" , percentage1: "98%"},
+  {skill:"Node Js" , percentage: "90%"},
   
-  {skill1:"HTML & CSS" , percentage1: "98%"},
+  {skill:"Express Js" , percentage: "92%"},
+  {skill:"MongoDb" , percentage: "84%"},
+  {skill:"Cloudinary Js" , percentage: "96%"},
+  {skill:"Multer Js" , percentage: "91%"},
+  {skill:"React Js" , percentage: "93%"},
+  {skill:"Jest & Supertest" , percentage: "80%"},
  
 
 ]
@@ -152,16 +157,16 @@ const About = () => {
 
       {/************************************** *PROGRESS BARS***************** ************/}
       
-         <div className="flex flex-wrap gap-2  w-screen sm:px-24">
+         <div className="flex flex-wrap  w-screen sm:px-24">
       {progress.map((el, index)=>{
         return(
          
-          <div  key={index} className="flex flex-col gap-2 sm:w-1/2   w-screen   pl-6 pr-14 sm:px-0 ">
-            <div className="flex flex-row justify-between"> <p>{el.skill1}</p>
-             <p>{el.percentage1}</p>
+          <div  key={index} className="flex flex-col justify-between sm:w-1/2   w-screen   pl-6 pr-14 sm:px-0 ">
+            <div className="flex flex-row justify-between"> <p>{el.skill}</p>
+             <p>{el.percentage}</p>
             </div>
            <div className=" bg-gray-200  h-2">
-           <div className="bg-blue-700 h-2  " style={{width:`${el.percentage1}`}}></div>
+           <div className="bg-blue-700 h-2  " style={{width:`${el.percentage}`}}></div>
            </div>
           </div>
         )
