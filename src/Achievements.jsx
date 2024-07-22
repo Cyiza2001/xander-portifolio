@@ -74,7 +74,7 @@ const Achievements = () => {
       </div>
       {/*********** ****************************************** DEGREE SECTION ********************************************************/}
 
-      <div className="flex sm:flex-row flex-col  w-screen  gap-4 mt-4">
+      <div className="flex sm:flex-row flex-col justify-center sm:px-0 px-4  w-screen  gap-4 mt-4">
       <div>
       <div className="flex flex-col justify-center items-start ">
         <h1 className="font-bold text-2xl m-2">Degree</h1>
@@ -84,7 +84,7 @@ const Achievements = () => {
             <div className="h-40  bg-blue-700" style={{ width: "2px" }}></div>
           </div>
           <div>
-            <div className="text-blue-700 font-semibold mb-1">
+            <div className="text-blue-700 font-semibold text-sm  mb-1">
               BACHELOR'S DEGREE IN ELECTRONICS AND TELECOMMUNICATIONS
               ENGINEERING
             </div>
@@ -119,7 +119,7 @@ const Achievements = () => {
             <div className="h-28  bg-blue-700" style={{ width: "2px" }}></div>
           </div>
           <div>
-            <div className="text-blue-700 font-semibold mb-1">
+            <div className="text-blue-700 font-semibold text-sm  mb-1">
               A2-IN PHYSICS-CHEMESTRY-MATHEMATICS 
             </div>
             <p className="bg-gray-100 w-24 p-1 font-medium font-serif">
@@ -144,7 +144,7 @@ const Achievements = () => {
             <div className="h-20  bg-blue-700" style={{ width: "2px" }}></div>
           </div>
           <div>
-            <div className="text-blue-700 font-semibold mb-1">
+            <div className="text-blue-700 font-semibold text-sm  mb-1">
               FULL-STACK DEVELOPMENT
             </div>
             <p className="bg-gray-100 w-28 p-1 mb-2 font-medium font-serif">
@@ -161,19 +161,18 @@ const Achievements = () => {
 
       <div>
       <div className="flex flex-col justify-center items-start">
-        <h1 className="font-bold text-2xl m-2">Degree</h1>
+        <h1 className="font-bold text-2xl m-2">EXPERIENCE AND STATS</h1>
         <div className="flex flex-row items-start gap-4 ">
           <div className="flex flex-col items-center">
             <div className="h-4 w-4  border-2 border-blue-700 rounded-full bg-white"></div>
             <div className="h-40  bg-blue-700" style={{ width: "2px" }}></div>
           </div>
           <div>
-            <div className="text-blue-700 font-semibold mb-1">
-              BACHELOR'S DEGREE IN ELECTRONICS AND TELECOMMUNICATIONS
-              ENGINEERING
+            <div className="text-blue-700 font-semibold text-sm  mb-1">
+              JUNIOR SOFTWARE DEVELOPER
             </div>
             <p className="bg-gray-100 w-24 p-1 font-medium font-serif">
-              2019-2024
+              2024
             </p>
             <p className="flex flex-row items-center gap-2 my-4 ">
               <FaAt className="font-light" />
@@ -203,7 +202,7 @@ const Achievements = () => {
             <div className="h-28  bg-blue-700" style={{ width: "2px" }}></div>
           </div>
           <div>
-            <div className="text-blue-700 font-semibold mb-1">
+            <div className="text-blue-700 font-semibold text-sm  mb-1">
               A2-IN PHYSICS-CHEMESTRY-MATHEMATICS 
             </div>
             <p className="bg-gray-100 w-24 p-1 font-medium font-serif">
@@ -228,7 +227,7 @@ const Achievements = () => {
             <div className="h-20  bg-blue-700" style={{ width: "2px" }}></div>
           </div>
           <div>
-            <div className="text-blue-700 font-semibold mb-1">
+            <div className="text-blue-700 font-semibold text-sm  mb-1">
               FULL-STACK DEVELOPMENT
             </div>
             <p className="bg-gray-100 w-28 p-1 mb-2 font-medium font-serif">
