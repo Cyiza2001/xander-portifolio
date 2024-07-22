@@ -2,6 +2,7 @@ import { HiOutlineEmojiHappy } from "react-icons/hi";
 import { AiOutlineProject } from "react-icons/ai";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
+import { FaAt } from "react-icons/fa";
 const stats = [
     {icon:<HiOutlineEmojiHappy style={{width: "30px" , height:"30px"}} /> , number:"618" ,title:"Happy Clients"},
     {icon:<AiOutlineProject style={{width: "30px" , height:"30px"}} /> , number:"314" ,title:"Completed Projects"},
@@ -55,8 +56,18 @@ const Achievements = ()=>{
 
 
         <div className="flex flex-col ">
-            <div className="flex flex-row ">
-                <div className="h-4 w-4  rounded-sm text-blue-700"></div>
+            <div className="flex flex-row items-start gap-4 ">
+                <div className="flex flex-col items-center">
+                <div className="h-4 w-4  border-2 border-blue-700 rounded-full bg-white"></div>
+                <div className="h-20  bg-blue-700" style={{width:"2px"}}></div>
+                </div>
+                <div>
+                <div className="text-blue-700 font-semibold mb-1">BACHELOR'S DEGREE IN ELECTRONICS AND TELECOMMUNICATIONS ENGINEERING</div>
+                <p className="bg-gray-100 w-24 p-1 font-medium font-serif">2019-2024</p>
+                <p className="flex flex-row items-center gap-2 my-4 "><FaAt className="font-light"/><a href="https://x.com/Uni_Rwanda" className="text-blue-700 font-semibold hover:text-blue-400 ">University of Rwanda</a></p>
+                <p><a href="https://x.com/urcst" className="text-blue-500">College of Science and Technology,</a>Former KIST</p>
+                </div>
+               
             </div>
 
         </div>
