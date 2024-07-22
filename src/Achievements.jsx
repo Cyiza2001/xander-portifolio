@@ -158,7 +158,7 @@ const Achievements = () => {
     </div>
 
 
-
+{/********** * EXPERIENCE AND STATS ***************************/}
       <div>
       <div className="flex flex-col justify-center items-start">
         <h1 className="font-bold text-2xl m-2">EXPERIENCE AND STATS</h1>

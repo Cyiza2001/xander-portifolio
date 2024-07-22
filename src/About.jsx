@@ -3,16 +3,6 @@ import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import picture from "/images/pic.png"
 
-// const progress = [
-//   {skill1:"HTML & CSS" , percentage1: "98%", skill2:"Node Js" , percentage2: "90%"},
- 
-//   {skill1:"Express Js" , percentage1: "92%",skill2:"MongoDb" , percentage2: "84%"},
-  
-//   {skill1:"Cloudinary Js" , percentage1: "96%",skill2:"Multer Js" , percentage2: "92%"},
-  
-//   {skill1:"React Js" , percentage1: "91%", skill2:"jest & Supertest" , percentage2: "80%"},
-
-// ]
 const progress = [
   {skill:"HTML & CSS" , percentage: "98%"},
  

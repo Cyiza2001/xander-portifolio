@@ -2,15 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import About from './About';
-// import Achievements from './Achievements';
-// import Certificate from './Certificate';
-// import Projects from './Projects';
-// import Blogs from './Blogs';
-// import Services from './Services';
-// import Contacts from './Contacts';
-
 import NavBars from "./NavBars";
 import Achievements from "./Achievements";
+import Certificates from "./Certificates";
 
 export default function App() {
   return (
@@ -20,6 +14,7 @@ export default function App() {
     <Home/>
     <About/>
     <Achievements/>
+    <Certificates/>
 
      </div>
     </>
