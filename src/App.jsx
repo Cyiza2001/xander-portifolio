@@ -10,6 +10,7 @@ import About from './About';
 // import Contacts from './Contacts';
 
 import NavBars from "./NavBars";
+import Achievements from "./Achievements";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
      <div className="flex flex-col">
     <Home/>
     <About/>
+    <Achievements/>
 
      </div>
     </>

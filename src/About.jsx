@@ -157,10 +157,11 @@ const About = () => {
 
       {/************************************** *PROGRESS BARS***************** ************/}
       
-         <div className="flex flex-wrap  w-screen sm:px-24">
+         <div className="flex flex-wrap  w-screen sm:px-24 ">
       {progress.map((el, index)=>{
         return(
-         
+
+          
           <div  key={index} className="flex flex-col justify-between sm:w-1/2   w-screen   pl-6 pr-14 sm:px-0 ">
             <div className="flex flex-row justify-between"> <p>{el.skill}</p>
              <p>{el.percentage}</p>
@@ -169,6 +170,8 @@ const About = () => {
            <div className="bg-blue-700 h-2  " style={{width:`${el.percentage}`}}></div>
            </div>
           </div>
+    
+     
         )
 
       })}
