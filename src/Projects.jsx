@@ -7,6 +7,7 @@ const projects= [ {projIcon: cert },
     {projIcon: cert },
     {projIcon: cert },
     {projIcon: cert },
+    {projIcon: cert },
  
 ]
 
