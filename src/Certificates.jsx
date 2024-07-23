@@ -1,3 +1,16 @@
+import cert from "/images/certify.jpg"
+const certificates= [ {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+  {certIcon: cert },
+ 
+]
+
 const Certificates  = ()=>{
     return(
         <div className="flex flex-col">
@@ -16,9 +29,19 @@ const Certificates  = ()=>{
         </div>
       </div>
       {/****************************************CERTFICATES******************************************/}
-       <div className="flex flex-wrap">
-        <img src="https://www.freecodecamp.org/certification/ndanyuzwe2/javascript-algorithms-and-data-structures-v8" alt="certicicate" />
-       </div>
+      <div className="flex flex-wrap  my-20 justify-center items-center ">
+      { certificates.map(el =>{
+        return(
+          <div className="relative overflow-hidden m-2  h-52 w-80">
+          <img src={`${el.certIcon}`} alt="certicicate" className="h-52 w-80 object-cover" />
+         </div>
+        )
+      })
+     
+}
+      </div>
+       
+       
 
         </div>
     
