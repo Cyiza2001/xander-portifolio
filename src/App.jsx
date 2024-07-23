@@ -5,6 +5,7 @@ import About from './About';
 import NavBars from "./NavBars";
 import Achievements from "./Achievements";
 import Certificates from "./Certificates";
+import Projects from "./Projects"
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
     <About/>
     <Achievements/>
     <Certificates/>
+    <Projects/>
 
      </div>
     </>
