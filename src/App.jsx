@@ -7,6 +7,7 @@ import Achievements from "./Achievements";
 import Certificates from "./Certificates";
 import Projects from "./Projects"
 import Blogs from "./Blogs"
+import Services from "./Services";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
     <Certificates/>
     <Projects/>
     <Blogs/>
+    <Services/>
 
      </div>
     </>
