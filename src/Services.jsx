@@ -18,7 +18,9 @@ const Services = ()=>{
 
         <div className="flex flex-wrap">
           <div>
-            
+          <div className="relative flex items-center justify-center w-24 h-24 bg-blue-100 rounded-full">
+      <div className="absolute w-12 h-12 bg-blue-300 transform -rotate-45 clip-play"></div>
+    </div>
           </div>
         </div>
       </div>
