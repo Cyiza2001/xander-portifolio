@@ -26,7 +26,7 @@ const Services = ()=>{
     <div className="flex sm:flex-row flex-col gap-20 mt-7 mb-20">
     {services.map((el)=>{
       return(
-        <div className="flex flex-col gap-3 relative justify-center items-center w-72 h-96 my-10 bg-white hover:shadow-xl ">
+        <div className="flex flex-col gap-3 relative justify-center items-center max-w-72 max-h-96 my-10 bg-white hover:shadow-xl ">
       <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="">
         <path
           stroke="none"
