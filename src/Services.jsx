@@ -1,4 +1,9 @@
 import { FaDesktop } from "react-icons/fa6";
+const services = [
+  {icon: <FaDesktop className="text-orange-600 w-96 h-96" />, title:"Web Based Systems", subTitle:"Responsive and interactive websites"},
+  {icon: <FaDesktop className="text-orange-600 w-96 h-96" />, title:"Quality Assurance", subTitle:"Automated and Manual Testing"},
+  {icon: <FaDesktop className="text-orange-600 w-96 h-96" />, title:"Management", subTitle:"Deployments and Mantainence"},
+]
 
 
 const Services = ()=>{
@@ -37,7 +42,10 @@ const Services = ()=>{
                 </svg>
               
     </div> */}
-     <div className="flex flex-col gap-3 relative justify-center items-center w-72 h-96 my-10 bg-white hover:shadow-xl ">
+    <div className="flex flex-row gap-20 mt-7 mb-20">
+    {services.map((el)=>{
+      return(
+        <div className="flex flex-col gap-3 relative justify-center items-center w-72 h-96 my-10 bg-white hover:shadow-xl ">
       <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="">
         <path
           stroke="none"
@@ -47,13 +55,20 @@ const Services = ()=>{
         />
         <foreignObject x="50%" y="50%" width="100" height="100" style={{ transform: 'translate(-50%, -50%)' }}>
           <div className="flex justify-center items-center w-full h-full">
-            <FaDesktop className="text-orange-600 w-96 h-96" />
+           {el.icon}
           </div>
         </foreignObject>
       </svg>
-      <p className="font-semibold text-2xl">Web Based Systems</p>
-      <p >Responsive and interactive websites</p>
+      <p className="font-semibold text-2xl">{el.title}</p>
+      <p >{el.subTitle}</p>
     </div>
+      )
+    })
+
+    }
+
+    </div>
+   
         
                
     </div>
