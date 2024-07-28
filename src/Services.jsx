@@ -1,8 +1,10 @@
 import { FaDesktop } from "react-icons/fa6";
+import { IoLogoGithub } from "react-icons/io";
+import { FaDatabase } from "react-icons/fa6";
 const services = [
   {icon: <FaDesktop className="text-orange-600 w-96 h-96" />, title:"Web Based Systems", subTitle:"Responsive and interactive websites"},
-  {icon: <FaDesktop className="text-orange-600 w-96 h-96" />, title:"Quality Assurance", subTitle:"Automated and Manual Testing"},
-  {icon: <FaDesktop className="text-orange-600 w-96 h-96" />, title:"Management", subTitle:"Deployments and Mantainence"},
+  {icon: <FaDatabase className="text-blue-600 w-96 h-96" />, title:"Database Management", subTitle:"Design and Maintenence of Database"},
+  {icon: <IoLogoGithub className="text-black  w-96 h-96" />, title:"Github Collaboration", subTitle:"Open-Source Software Development"},
 ]
 
 
@@ -26,20 +28,20 @@ const Services = ()=>{
     <div className="flex sm:flex-row flex-col gap-20 mt-7 mb-20">
     {services.map((el)=>{
       return(
-        <div className="flex flex-col gap-3 relative justify-center items-center max-w-72 max-h-96 my-10 bg-white hover:shadow-xl ">
-      <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" className="">
-        <path
-          stroke="none"
-          strokeWidth="0"
-          fill="rgb(243 244 246)"
-          d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"
-        />
-        <foreignObject x="50%" y="50%" width="100" height="100" style={{ transform: 'translate(-50%, -50%)' }}>
-          <div className="flex justify-center items-center w-full h-full">
+        <div className="flex flex-col gap-3 relative justify-center items-center w-72 h-96 my-10 bg-white hover:shadow-xl ">
+         <div>
+         <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+
+                
+                </svg>
+      
+          <div className="flex justify-center items-center w-8 h-8 absolute right-32" style={{top:"135px"}}>
            {el.icon}
           </div>
-        </foreignObject>
-      </svg>
+          </div>
+
+
       <p className="font-semibold text-2xl">{el.title}</p>
       <p >{el.subTitle}</p>
     </div>
