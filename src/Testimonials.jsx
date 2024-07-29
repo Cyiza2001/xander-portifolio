@@ -20,8 +20,8 @@ const Testimonials = () => {
     arrows     : false,
     pagination : true,
     classes    : {
-      pagination: 'splide__pagination your-custom-pagination',
-      page      : 'splide__pagination__page your-custom-page',
+      pagination: 'flex justify-center ',
+      page      : 'w-3 h-3 border-2 border-blue-600 rounded-full mx-1 bg-white',
     }
   };
 
@@ -58,25 +58,12 @@ const Testimonials = () => {
           </SplideSlide>
         ))}
       </Splide>
-      <style jsx>{`
-        .your-custom-pagination {
-          display: flex;
-          justify-content: center;
-        
-        }
-        .your-custom-page {
-          width: 12px;
-          height: 12px;
-          border: 2px solid #1D4ED8;
-          border-radius: 50%;
-          margin: 0 5px;
-          cursor: pointer;
-          background: white;
-        }
+       <style jsx>{`
+  
         .splide__pagination__page.is-active {
           background: #1D4ED8;
         }
-      `}</style>
+      `}</style> 
     </div>
   );
 }
