@@ -8,6 +8,7 @@ import Certificates from "./Certificates";
 import Projects from "./Projects"
 import Blogs from "./Blogs"
 import Services from "./Services";
+import Testimonials from "./Testimonials";
 
 export default function App() {
   return (
@@ -21,6 +22,8 @@ export default function App() {
     <Projects/>
     <Blogs/>
     <Services/>
+    <Testimonials/>
+
 
      </div>
     </>
