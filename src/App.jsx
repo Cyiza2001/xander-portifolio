@@ -1,7 +1,4 @@
 import React from "react";
-// import "slick-carousel/slick/slick.css"; 
-// import "slick-carousel/slick/slick-theme.css";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import About from './About';
@@ -12,6 +9,7 @@ import Projects from "./Projects"
 import Blogs from "./Blogs"
 import Services from "./Services";
 import Testimonials from "./Testimonials";
+import Contact from "./Contact";
 
 export default function App() {
   return (
@@ -26,6 +24,7 @@ export default function App() {
     <Blogs/>
     <Services/>
     <Testimonials/>
+    <Contact/>
 
 
      </div>

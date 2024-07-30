@@ -31,7 +31,7 @@ const NavBars = () => {
         {data.map((el) => (
           <li
             key={el.id}
-            className={`p-4 min-h-12 min-w-12 bg-white rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
+            className={`p-4 min-h-12 min-w-12 bg-gray-200 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
               hoveredId === el.id
                 ? "hover:px-3 hover:text-white font-bold hover:bg-blue-700"
                 : ""
