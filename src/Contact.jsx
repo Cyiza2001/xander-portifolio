@@ -36,7 +36,7 @@ const Contact = ()=>{
       </div>
 
       {/********************************** * INPUTS FOR CONTACT********************************************* */}
-      <div className="flex flex-col sm:w-1/2  mx-4 gap-7">
+      <div className="flex flex-col  sm:w-1/2  mx-4 gap-7">
       <div className="flex flex-row gap-7">
        <input type="text" placeholder="Your Name"  className="border border-gray-300 p-2 rounded-md w-1/2 focus:border-blue-600 focus:outline-none" />
        <input type="text" placeholder="Your Email"  className="border border-gray-300 p-2 rounded-md w-1/2 focus:border-blue-600 focus:outline-none" />
@@ -47,6 +47,11 @@ const Contact = ()=>{
        <div className="flex ">
        <input type="text" placeholder="Message"  className="border border-gray-300 p-2 rounded-md w-screen min-h-32 focus:border-blue-600 focus:outline-none" />
        </div>
+         <div className="flex justify-center items-center">
+         <button className="bg-blue-700 rounded-3xl text-white w-40 h-10 font-semibold  flex justify-center items-center ">Send Message</button>
+
+         </div>
+       
 
       </div> 
       </main>
