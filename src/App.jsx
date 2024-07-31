@@ -10,6 +10,7 @@ import Blogs from "./Blogs"
 import Services from "./Services";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
+import Footers from "./Footers";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
     <Services/>
     <Testimonials/>
     <Contact/>
+    <Footers/>
 
 
      </div>
