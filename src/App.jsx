@@ -11,6 +11,7 @@ import Services from "./Services";
 import Testimonials from "./Testimonials";
 import Contact from "./Contact";
 import Footers from "./Footers";
+import ScrollUp from "./ScrollUp";
 
 export default function App() {
   return (
