@@ -28,6 +28,7 @@ export default function App() {
     <Testimonials/>
     <Contact/>
     <Footers/>
+    <ScrollUp/>
 
 
      </div>
