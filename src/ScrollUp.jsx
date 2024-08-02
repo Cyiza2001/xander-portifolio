@@ -5,7 +5,7 @@ import { FaArrowUp } from 'react-icons/fa';
 const ScrollUp = () => {
     const [visible, setVisible] = useState(false);
 
-    const handleScroll = () =>  window.scrollY > 60 ? setVisible(true) : setVisible(false);
+    const handleScroll = () =>  window.scrollY >100 ? setVisible(true) : setVisible(false);
     
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
