@@ -33,7 +33,7 @@ const NavBars = () => {
             key={el.id}
             className={`p-4 min-h-12 min-w-12 bg-gray-200  rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
               hoveredId === el.id
-                ? "hover:px-3 hover:text-white font-bold hover:cursor-pointer hover:bg-blue-700"
+                ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
                 : ""
             }`}
             onMouseEnter={() => setHoveredId(el.id)}
