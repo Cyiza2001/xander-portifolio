@@ -12,29 +12,36 @@ import Testimonials from "./Testimonials";
 import Contact from "./Contact";
 import Footers from "./Footers";
 import ScrollUp from "./ScrollUp";
+const ids = ["home", "about","achievements", "certificates","projects","blogs","services","testimonials","contact"]
 
 export default function App() {
   return (
     <>
     <NavBars/>
+    { ids.map((id) =>{ return(
      <div className="flex flex-col">
-    <Home/>
-    <About/>
-    <Achievements/>
-    <Certificates/>
-    <Projects/>
-    <Blogs/>
-    <Services/>
-    <Testimonials/>
-    <Contact/>
+    <Home id={id}/>
+    <About id={id}/>
+    <Achievements id={id}/>
+    <Certificates id={id}/>
+    <Projects id={id}/>
+    <Blogs id={id}/>
+    <Services id={id}/>
+    <Testimonials id={id}/>
+    <Contact id={id}/>
     <Footers/>
     <ScrollUp/>
 
 
      </div>
+    )})
+     }
     </>
     
      
 
   );
 }
+
+
+
