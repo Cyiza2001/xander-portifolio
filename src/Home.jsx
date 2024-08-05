@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from 'react';
 import { useState } from "react";
 import NavBars from "./NavBars";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -30,7 +30,7 @@ const media = [
   },
 ];
 
-const Home = () => {
+const Home = forwardRef((props, ref) => {
   const [text] = useTypewriter({
     words: ["Full-Stack Programmer"],
     loop: 0,
@@ -43,7 +43,7 @@ const Home = () => {
   const toggleNavBar = () => setIsNavBarVisible(!isNavBarVisible);
 
   return (
-    <div className="relative flex bg-home h-screen bg-cover bg-center sm:p-40 sm:justify-start sm:items-start sm:py-48 w-screen justify-center items-center ">
+    <div ref={ref} id="home" className=" section relative flex bg-home h-screen bg-cover bg-center sm:p-40 sm:justify-start sm:items-start sm:py-48 w-screen justify-center items-center ">
       <div
         className="fixed right-6 top-3 text-3xl text-black z-30 sm:hidden"
         onClick={toggleNavBar}
@@ -88,6 +88,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Home;
