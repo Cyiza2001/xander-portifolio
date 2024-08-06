@@ -121,6 +121,102 @@
 // export default NavBars;
 
 
+// import { useState, useEffect } from "react";
+// import { TiHomeOutline } from "react-icons/ti";
+// import { LuUser2 } from "react-icons/lu";
+// import { TbRosette } from "react-icons/tb";
+// import { LiaCertificateSolid } from "react-icons/lia";
+// import { AiOutlineProject } from "react-icons/ai";
+// import { TbLogs } from "react-icons/tb";
+// import { GrServices } from "react-icons/gr";
+// import { FaRegEnvelope } from "react-icons/fa6";
+
+// const data = [
+//   { name: "Home", icon: <TiHomeOutline />, id: "home" },
+//   { name: "About", icon: <LuUser2 />, id: "about" },
+//   { name: "Achievements", icon: <TbRosette />, id: "achievements" },
+//   { name: "Certificates", icon: <LiaCertificateSolid />, id: "certificates" },
+//   { name: "Projects", icon: <AiOutlineProject />, id: "projects" },
+//   { name: "Blogs", icon: <TbLogs />, id: "blogs" },
+//   { name: "Services", icon: <GrServices />, id: "services" },
+//   { name: "Contact", icon: <FaRegEnvelope />, id: "contact" },
+// ];
+
+// const NavBars = ({ refs }) => {
+//   const [activeId, setActiveId] = useState(null);
+//   const [hoveredId, setHoveredId] = useState(null);
+//   console.log(refs , "ngizi refs")
+
+//   const handleScroll = () => {
+//     const scrollPosition = window.scrollY + window.innerHeight / 2;
+//     Object.keys(refs).forEach((id) => {
+//       const section = refs[id].current;
+    
+//       if (section) {
+//         const { offsetTop, offsetHeight } = section;
+//         if (
+//           scrollPosition >= offsetTop &&
+//           scrollPosition < offsetTop + offsetHeight
+//         ) setActiveId(id);
+//         else setActiveId(null);
+        
+        
+
+//         console.log(activeId, "narimpfuye mwa");
+//       }
+//     });
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   return (
+//     <nav className="fixed bg-transparent z-50 top-10 bottom-10 left-4">
+//       <ul className="sm:flex flex-col hidden gap-3 justify-between max-h-[77%]">
+//         {data.map((el) => (
+//           <li
+//             key={el.id}
+//             className={`p-4 min-h-12 min-w-12 bg-gray-200 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
+//               hoveredId === el.id ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
+//                                   : ""
+              
+//             } ${activeId ? "bg-gray-200" : "bg-blue-700"} }`}
+//             // onClick={() => {
+//             //   const section = refs[el.id].current;
+//             //   if (section) {
+//             //     section.scrollIntoView({ behavior: "smooth" });
+//             //   }
+//             // }}
+//             onMouseEnter={() => setHoveredId(el.id)}
+//                 onMouseLeave={() => setHoveredId(null)}
+//           >
+//             {el.icon}
+//             <span
+//               className={
+//                 hoveredId === el.id
+//                   ? "block transition ease-in-out text-white font-bold"
+//                   : "hidden ease-in-out duration-200"
+//               }
+//             >
+//               {el.name}
+//             </span>
+//           </li>
+//         ))}
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// export default NavBars;
+
+
+
+
+
 import { useState, useEffect } from "react";
 import { TiHomeOutline } from "react-icons/ti";
 import { LuUser2 } from "react-icons/lu";
@@ -145,34 +241,43 @@ const data = [
 const NavBars = ({ refs }) => {
   const [activeId, setActiveId] = useState(null);
   const [hoveredId, setHoveredId] = useState(null);
-  console.log(refs , "ngizi refs")
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+    let foundActive = false; // Flag to check if an active section is found
     Object.keys(refs).forEach((id) => {
       const section = refs[id].current;
-    
       if (section) {
         const { offsetTop, offsetHeight } = section;
         if (
           scrollPosition >= offsetTop &&
           scrollPosition < offsetTop + offsetHeight
-        ) setActiveId(id);
-        else setActiveId(null);
-        
-        
-
-        console.log(activeId, "narimpfuye mwa");
+        ) {
+          if (!foundActive) {
+            setActiveId(id);
+            foundActive = true; // Set flag if active section is found
+          }
+        }
       }
     });
+    if (!foundActive) {
+      setActiveId(null); // Set to null if no active section is found
+    }
   };
 
   useEffect(() => {
+    // Check if refs are populated
+    console.log(refs, "refs in NavBars");
+
+    // Add the scroll event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [refs]); // Add refs to dependency array to run useEffect when refs change
 
   return (
     <nav className="fixed bg-transparent z-50 top-10 bottom-10 left-4">
@@ -180,19 +285,19 @@ const NavBars = ({ refs }) => {
         {data.map((el) => (
           <li
             key={el.id}
-            className={`p-4 min-h-12 min-w-12 bg-gray-200 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
-              hoveredId === el.id ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
-                                  : ""
-              
-            } ${activeId ? "bg-gray-200" : "bg-blue-700"} }`}
-            // onClick={() => {
-            //   const section = refs[el.id].current;
-            //   if (section) {
-            //     section.scrollIntoView({ behavior: "smooth" });
-            //   }
-            // }}
+            className={`p-4 min-h-12 min-w-12 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
+              hoveredId === el.id
+                ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
+                : ""
+            } ${activeId === el.id ? "bg-blue-700 text-white" : "bg-gray-200"}`}
+            onClick={() => {
+              const section = refs[el.id].current;
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             onMouseEnter={() => setHoveredId(el.id)}
-                onMouseLeave={() => setHoveredId(null)}
+            onMouseLeave={() => setHoveredId(null)}
           >
             {el.icon}
             <span
@@ -212,5 +317,6 @@ const NavBars = ({ refs }) => {
 };
 
 export default NavBars;
+
 
 
