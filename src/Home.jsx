@@ -9,6 +9,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { MdMenu } from "react-icons/md";
 import { ImCross } from "react-icons/im";
+import ScrollUp from "./ScrollUp"
 
 const media = [
   {
@@ -41,22 +42,24 @@ const Home = forwardRef((props, ref) => {
   const [hoveredId, setHoveredId] = useState(null);
   const [isNavBarVisible, setIsNavBarVisible] = useState(false);
   const toggleNavBar = () => setIsNavBarVisible(!isNavBarVisible);
+  const menuStyles = "fixed right-6 top-3 text-3xl text-black z-30"
+  const crossStyles ="fixed right-6 top-3 text-sm text-white z-30 flex items-center justify-center bg-blue-700 rounded-full h-9 w-9"
 
   return (
     <div ref={ref}  className=" relative flex bg-home h-screen bg-cover bg-center sm:p-40 sm:justify-start sm:items-start sm:py-48 w-screen justify-center items-center ">
       <div
-        className="fixed right-6 top-3 text-3xl text-black z-30 sm:hidden"
+        className={isNavBarVisible? crossStyles :menuStyles}
         onClick={toggleNavBar}
       >
         {isNavBarVisible ? <ImCross /> : <MdMenu />}
       </div>
 
       <div
-        className={`sm:hidden absolute top-0 left-0 w-100 bottom-0 bg-red-800  z-50 ${
+        className={` absolute top-0 left-0 w-100 bottom-0 bg-red-800  z-50 ${
           isNavBarVisible ? "block" : "hidden"
         }`}
       >
-      <NavBars />
+       <p>djibuji</p>
       </div>
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-white opacity-70 z-0"></div>
 

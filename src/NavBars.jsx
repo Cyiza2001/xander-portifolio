@@ -27,7 +27,6 @@ const NavBars = ({ refs }) => {
   const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-    // let foundActive = false;
     Object.keys(refs).forEach((id) => {
       const section = refs[id].current;
       if (section) {
@@ -35,10 +34,7 @@ const NavBars = ({ refs }) => {
         if (
           scrollPosition >= offsetTop &&
           scrollPosition < offsetTop + offsetHeight
-        ) {
-            setActiveId(id);
-          
-        }
+        )   setActiveId(id)
       }
     });
     
