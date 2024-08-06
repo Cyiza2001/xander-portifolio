@@ -22,7 +22,7 @@ const progress = [
 const About = forwardRef((props, ref) => {
   return (
   
-    <div ref={ref} id="about" className=" section flex flex-col px-4">
+    <div ref={ref}  className=" flex flex-col px-4">
       <div className="flex flex-col justify-center items-center" >
         <div className="flex font-bold text-2xl mt-14 mb-6">ABOUT</div>
         <div className="flex " style={{width:"122.83px"}}>

@@ -29,7 +29,7 @@ const stats = [
 
 const Achievements = forwardRef((props, ref) => {
   return (
-    <div ref={ref} id="achievements" className=" section flex flex-col px-4">
+    <div ref={ref}  className="flex flex-col px-4">
       <div className="flex flex-col  justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">STATS</div>
         <div className="flex " style={{ width: "122.83px" }}>

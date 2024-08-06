@@ -14,7 +14,7 @@ const certificates= [ {certIcon: cert },
 
 const Certificates  = forwardRef ((props, ref)=>{
     return(
-        <div ref={ref} id="certificates"  className="flex flex-col">
+        <div ref={ref}   className="flex flex-col">
 
     <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">

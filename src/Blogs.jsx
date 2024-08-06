@@ -10,7 +10,7 @@ const blogs= [ {Icon: cert ,title:"This is the first blog on my website" , date:
 
 const Blogs = forwardRef( (props, ref)=>{
     return (
-        <div ref={ref} id="blogs"  className="section flex flex-col">
+        <div ref={ref}   className="section flex flex-col">
             
       <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
