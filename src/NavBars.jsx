@@ -20,7 +20,7 @@ const data = [
   { name: "Contact", icon: <FaRegEnvelope />, id: "contact" },
 ];
 
-const NavBars = ({ refs }) => {
+const NavBars = ({ refs,isNavBarVisible }) => {
   const [activeId, setActiveId] = useState(null);
   const [hoveredId, setHoveredId] = useState(null);
 
@@ -53,8 +53,8 @@ const NavBars = ({ refs }) => {
 
   return (
     <nav className="fixed bg-transparent z-50 top-10 bottom-10 left-4">
-      <p>xander </p>
-      <ul className="sm:flex flex-col hidden gap-3 justify-between max-h-[77%]">
+      
+      <ul className={`sm:flex flex-col ${isNavBarVisible ? 'block' : 'hidden'} gap-3 justify-between max-h-[77%]`}>
         {data.map((el) => (
           <li
             key={el.id}
