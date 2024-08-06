@@ -53,6 +53,7 @@ const NavBars = ({ refs }) => {
 
   return (
     <nav className="fixed bg-transparent z-50 top-10 bottom-10 left-4">
+      <p>xander </p>
       <ul className="sm:flex flex-col hidden gap-3 justify-between max-h-[77%]">
         {data.map((el) => (
           <li
