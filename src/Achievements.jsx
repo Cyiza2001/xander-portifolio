@@ -3,6 +3,7 @@ import { AiOutlineProject } from "react-icons/ai";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { FaAt } from "react-icons/fa";
+import { forwardRef } from "react";
 const stats = [
   {
     icon: <HiOutlineEmojiHappy style={{ width: "30px", height: "30px" }} />,
@@ -26,9 +27,9 @@ const stats = [
   },
 ];
 
-const Achievements = () => {
+const Achievements = forwardRef((props, ref) => {
   return (
-    <div>
+    <div ref={ref} id="achievements" className=" section flex flex-col px-4">
       <div className="flex flex-col  justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">STATS</div>
         <div className="flex " style={{ width: "122.83px" }}>
@@ -243,6 +244,6 @@ const Achievements = () => {
      
     </div>
   );
-};
+});
 
 export default Achievements;

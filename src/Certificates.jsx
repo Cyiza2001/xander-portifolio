@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import cert from "/images/certify.jpg"
 const certificates= [ {certIcon: cert },
   {certIcon: cert },
@@ -11,9 +12,9 @@ const certificates= [ {certIcon: cert },
  
 ]
 
-const Certificates  = ()=>{
+const Certificates  = forwardRef ((props, ref)=>{
     return(
-        <div className="flex flex-col">
+        <div ref={ref} id="certificates"  className="flex flex-col">
 
     <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
@@ -46,6 +47,6 @@ const Certificates  = ()=>{
         </div>
     
     )
-}
+})
 
 export default Certificates;

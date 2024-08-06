@@ -46,23 +46,22 @@
 // }
 
 
-import React, { useRef } from 'react';
-import Home from './Home';
-import About from './About';
-import Achievements from './Achievements';
-import Certificates from './Certificates';
-import Projects from './Projects';
-import Blogs from './Blogs';
-import Services from './Services';
-import Testimonials from './Testimonials';
-import Contact from './Contact';
-import Footers from './Footers';
-import ScrollUp from './ScrollUp';
-import NavBars from './NavBars';
+import React, { useRef } from "react";
+import NavBars from "./NavBars";
+import Home from "./Home";
+import About from "./About";
+import Achievements from "./Achievements";
+import Certificates from "./Certificates";
+import Projects from "./Projects";
+import Blogs from "./Blogs";
+import Services from "./Services";
+import Testimonials from "./Testimonials";
+import Contact from "./Contact";
+import Footers from "./Footers";
+import ScrollUp from "./ScrollUp";
 
 const ids = [
-  'home', 'about', 'achievements', 'certificates',
-  'projects', 'blogs', 'services', 'testimonials', 'contact'
+  "home", "about", "achievements", "certificates", "projects", "blogs", "services", "testimonials", "contact"
 ];
 
 export default function App() {
@@ -71,26 +70,28 @@ export default function App() {
     return acc;
   }, {});
 
+ 
   return (
     <>
+    {console.log(refs , "aha ni muri app"
+     )}
       <NavBars refs={refs} />
-      {ids.map((id) => (
-        <div key={id} className="flex flex-col">
-          <Home ref={refs[id]} id={id} />
-          <About ref={refs[id]} id={id} />
-          <Achievements ref={refs[id]} id={id} />
-          <Certificates ref={refs[id]} id={id} />
-          <Projects ref={refs[id]} id={id} />
-          <Blogs ref={refs[id]} id={id} />
-          <Services ref={refs[id]} id={id} />
-          <Testimonials ref={refs[id]} id={id} />
-          <Contact ref={refs[id]} id={id} />
-          <Footers />
-          <ScrollUp />
-        </div>
-      ))}
+      <div>
+        <Home ref={refs["home"]} />
+        <About ref={refs["about"]} />
+        <Achievements ref={refs["achievements"]} />
+        <Certificates ref={refs["certificates"]} />
+        <Projects ref={refs["projects"]} />
+        <Blogs ref={refs["blogs"]} />
+        <Services ref={refs["services"]} />
+        <Testimonials ref={refs["testimonials"]} />
+        <Contact ref={refs["contact"]} />
+        <Footers />
+        <ScrollUp />
+      </div>
     </>
   );
 }
+
 
 

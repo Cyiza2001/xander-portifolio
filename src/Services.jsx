@@ -1,11 +1,11 @@
 import { FaDesktop } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
 import { FaDatabase } from "react-icons/fa6";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
 
 
-const Services = ()=>{
+const Services = forwardRef((props, ref)=>{
   const [hoveredId, setHoveredId] = useState(null);
 
 const webBasedSystemsId = 1;
@@ -20,7 +20,7 @@ const services = [
 
     return(
 
-        <div className="flex flex-col">
+        <div ref={ref} id="services"  className="flex flex-col">
         <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
           SERVICES
@@ -75,7 +75,7 @@ const services = [
     )
    
     
-}
+})
 
 export default Services;    
 

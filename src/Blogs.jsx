@@ -1,3 +1,4 @@
+import { forwardRef } from "react"
 import cert from "/images/certify.jpg"
 const blogs= [ {Icon: cert ,title:"This is the first blog on my website" , date:"July 23, 2024" },
     {Icon: cert ,title:"This is the first blog on my website" , date:"July 23, 2024" },
@@ -7,9 +8,9 @@ const blogs= [ {Icon: cert ,title:"This is the first blog on my website" , date:
  
 ] 
 
-const Blogs = ()=>{
+const Blogs = forwardRef( (props, ref)=>{
     return (
-        <div className="flex flex-col">
+        <div ref={ref} id="blogs"  className="section flex flex-col">
             
       <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
@@ -48,6 +49,6 @@ const Blogs = ()=>{
 </div>
      </div>
     )
-}
+})
 
 export default Blogs;

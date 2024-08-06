@@ -87,6 +87,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css'; 
 import picture from '/images/pic.png';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
+import { forwardRef } from 'react';
 
 const testimonials = [
   {photo: picture, name: "KALISA TCHAMI", title: "Software Engineer at SevenX", testimony: "I've seen firsthand how dedicated and skilled Cyiza is as a software developer. With expertise in technologies like React, Express.js, and MongoDB, they consistently deliver robust and innovative solutions. Their commitment to best practices and strong ethical values make them a standout professional in the field."},
@@ -95,7 +96,7 @@ const testimonials = [
   {photo: picture, name: "DO PAZZO", title: "Technical Manager at Billiard", testimony: "I've seen firsthand how dedicated and skilled Cyiza is as a software developer. With expertise in technologies like React, Express.js, and MongoDB, they consistently deliver robust and innovative solutions. Their commitment to best practices and strong ethical values make them a standout professional in the field."},
 ];
 
-const Testimonials = () => {
+const Testimonials = forwardRef((props,ref) => {
   const options = {
     type: 'loop',
     perPage: 1,
@@ -110,7 +111,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="flex flex-col w-full max-w-lg mx-auto mt-10">
+    <div ref={ref} id="testimonials"  className="flex flex-col w-full max-w-lg mx-auto mt-10">
       <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-3 mb-6">TESTIMONIALS</div>
         <div className="flex" style={{ width: '122.83px' }}>
@@ -155,7 +156,7 @@ const Testimonials = () => {
       `}</style>
     </div>
   );
-}
+})
 
 export default Testimonials;
 

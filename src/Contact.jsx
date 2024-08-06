@@ -1,6 +1,7 @@
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { CiMobile2 } from "react-icons/ci";
+import { forwardRef } from "react";
 
 const contact = [
     {icon:<CiLocationOn />, name:"Location:", description:"Kigali , Rwanda" },
@@ -8,9 +9,9 @@ const contact = [
     {icon:<CiMobile2 />, name:"Call:", description:"+250785587274" }
 ]
 
-const Contact = ()=>{
+const Contact = forwardRef( (props, ref)=>{
     return(
-        <section className="flex flex-col">
+        <section ref={ref} id="contact"  className="flex flex-col ">
            <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-28 mb-6">CONTACT</div>
         <div className="flex" style={{ width: '122.83px' }}>
@@ -20,7 +21,7 @@ const Contact = ()=>{
         </div>
       </div>
       {/****************************** MAIN CONTACT******************************** */}
-     <main className="flex sm:flex-row flex-col sm:gap-32 gap-12 mt-12  mr-16 ">
+     <main className="flex sm:flex-row flex-col sm:gap-32 gap-12 mt-12  mr-16 items-start ">
       <div className="flex  flex-col gap-9 justify-center items-start sm:ml-36 ml-8  ">
 {contact.map((el)=>{return(
         <div className="flex flex-row gap-5">
@@ -57,6 +58,6 @@ const Contact = ()=>{
       </main>
         </section>
     )
-}
+})
 
 export default Contact;
