@@ -43,9 +43,9 @@ const Home = forwardRef((props, ref) => {
   const [isNavBarVisible, setIsNavBarVisible] = useState(false);
   const toggleNavBar = () => setIsNavBarVisible(!isNavBarVisible);
   const menuStyles =
-    "fixed right-6 top-3 text-3xl text-black z-30 sm:hidden cursor-pointer";
+    "fixed right-6 top-3 text-3xl text-black z-50 sm:hidden cursor-pointer";
   const crossStyles =
-    "fixed right-6 top-3 text-sm text-white z-30 flex items-center sm:hidden  justify-center bg-blue-700 rounded-full h-9 w-9 cursor-pointer";
+    "fixed right-6 top-3 text-sm text-white z-50 flex items-center sm:hidden  justify-center bg-blue-700 rounded-full h-9 w-9 cursor-pointer";
 
   return (
     <div

@@ -22,8 +22,8 @@ const Testimonials = forwardRef((props,ref) => {
     arrows: false,
     pagination: true,
     classes: {
-      pagination: ' splide__pagination flex justify-center  gap-2', // Centering pagination and adding spacing
-      page: 'splide__pagination__page custom-page', // Default dot styles
+      pagination: ' splide__pagination flex justify-center  gap-2',
+      page: 'splide__pagination__page custom-page', 
     },
   };
 

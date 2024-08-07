@@ -24,6 +24,9 @@ const NavBars = ({ refs,isNavBarVisible }) => {
   const [activeId, setActiveId] = useState(null);
   const [hoveredId, setHoveredId] = useState(null);
 
+  const liFixed = "w-11/12 mx-3 my-2 h-12 w-12 rounded-full flex flex-row items-center pl-4 gap-2 "
+  const liFlexible = "p-4 min-h-12 min-w-12 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center"
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
@@ -52,21 +55,24 @@ const NavBars = ({ refs,isNavBarVisible }) => {
   }, [refs]); 
 
   return (
-    <nav className="fixed bg-transparent z-50 top-10 bottom-10 left-4">
+    <nav className={`fixed sm:bg-transparent bg-white z-30 sm:top-10 top:0 h-screen sm:border-none  border-gray-300  sm:bottom-10 bottom-0 sm:left-4 left-0 py-14 sm:py-3 ` }  style={{ width: isNavBarVisible ? '280px' : '0' , borderRightWidth:"1px"}}>
       
-      <ul className={`sm:flex flex-col ${isNavBarVisible ? 'block' : 'hidden'} gap-3 justify-between max-h-[77%]`}>
+      <ul className={`sm:flex flex-col ${isNavBarVisible ? 'block' : 'hidden'} gap-3 justify-between   sm:max-h-[77%]`}>
         {data.map((el) => (
           <li
             key={el.id}
-            className={`p-4 min-h-12 min-w-12 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center ${
-              hoveredId === el.id
+            className={`${isNavBarVisible? liFixed : liFlexible} ${
+              hoveredId === el.id 
                 ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
                 : ""
             } ${activeId === el.id ? "bg-blue-700 text-white" : "bg-gray-200"}`}
            
             onClick={() => {
+              
               const section = refs[el.id].current;
+              console.log("section is clicked", section)
               if (section) {
+                
                 section.scrollIntoView({ behavior: "smooth" });
               }
             }}
@@ -78,9 +84,11 @@ const NavBars = ({ refs,isNavBarVisible }) => {
             {el.icon}
             <span
               className={
-                hoveredId === el.id
-                  ? "block transition ease-in-out text-white font-bold"
+                hoveredId === el.id || isNavBarVisible
+                  ? "block transition ease-in-out sm:text-white   hover:font-bold"
                   : "hidden ease-in-out duration-200"
+
+                  
               }
             >
               {el.name}
