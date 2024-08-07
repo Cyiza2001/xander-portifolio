@@ -33,6 +33,7 @@ const NavBars = ({ refs,isNavBarVisible }) => {
 
     Object.keys(refs).forEach((id) => {
       const section = refs[id].current;
+      
       if (section) {
         const { offsetTop, offsetHeight } = section;
         if (
@@ -62,8 +63,9 @@ const NavBars = ({ refs,isNavBarVisible }) => {
               hoveredId === el.id 
                 ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
                 : " "
-            } ${activeId === el.id ? "bg-blue-700 text-white" : "bg-gray-200"}`}
-           
+            } ${activeId === el.id  ? "bg-blue-700 text-white" : "bg-gray-200"} ${console.log(activeId , "activeid yari iyi man")}`}
+          
+            
             onClick={() => {
               const section = refs[el.id].current;
               console.log("section is clicked", section);
