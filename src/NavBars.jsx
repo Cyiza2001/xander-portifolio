@@ -26,11 +26,11 @@ const NavBars = ({ refs,isNavBarVisible }) => {
 
   const liFixed = "w-11/12 mx-3 my-2 min-h-12 min-w-12 rounded-full flex flex-row items-center pl-4 py-3 gap-2"
   const liFlexible = "p-4 min-h-12 min-w-12 rounded-full duration-300 ease-in-out w-fit flex gap-2 justify-center items-center"
+ 
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
-    
-
+  
     Object.keys(refs).forEach((id) => {
       const section = refs[id].current;
       
@@ -63,10 +63,11 @@ const NavBars = ({ refs,isNavBarVisible }) => {
               hoveredId === el.id 
                 ? "hover:px-3 hover:text-white hover:font-bold hover:cursor-pointer hover:bg-blue-700"
                 : " "
-            } ${activeId === el.id  ? "bg-blue-700 text-white" : "bg-gray-200"} ${console.log(activeId , "activeid yari iyi man")}`}
+            } ${activeId === el.id  ? "bg-blue-700 text-white" : "bg-gray-200"} `}
           
             
             onClick={() => {
+              console.log(refs,activeId, "ref yanjye")
               const section = refs[el.id].current;
               console.log("section is clicked", section);
               if (section) {
