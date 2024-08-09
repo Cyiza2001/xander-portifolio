@@ -33,7 +33,7 @@ const NavBars = ({ refs,isNavBarVisible }) => {
   
     Object.keys(refs).forEach((id) => {
       const section = refs[id].current;
-      
+     
       if (section) {
         const { offsetTop, offsetHeight } = section;
         if (
@@ -67,9 +67,9 @@ const NavBars = ({ refs,isNavBarVisible }) => {
           
             
             onClick={() => {
-              console.log(refs,activeId, "ref yanjye")
+              console.log(refs[el.id],activeId, "ref yanjye")
               const section = refs[el.id].current;
-              console.log("section is clicked", section);
+             
               if (section) {
                 
                 section.scrollIntoView({ behavior: "smooth" });
