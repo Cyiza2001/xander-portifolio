@@ -10,7 +10,6 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { MdMenu } from "react-icons/md";
 import { ImCross } from "react-icons/im";
 
-
 const media = [
   {
     ref: "https://www.linkedin.com/in/alexandre-ndanyuzwe-cyiza-766644210/",
@@ -65,7 +64,7 @@ const Home = forwardRef((props, ref) => {
         }`}
         style={{ minHeight: "100vh", minWidth: "50vw" }}
       >
-        <NavBars isNavBarVisible={isNavBarVisible} />
+        <NavBars isNavBarVisible={isNavBarVisible} refs={ref} />
       </div>
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-white opacity-70 z-0"></div>
 
