@@ -7,6 +7,7 @@ import { AiOutlineProject } from "react-icons/ai";
 import { TbLogs } from "react-icons/tb";
 import { GrServices } from "react-icons/gr";
 import { FaRegEnvelope } from "react-icons/fa6";
+import { IoRefreshSharp } from "react-icons/io5";
 
 const data = [
   { name: "Home", icon: <TiHomeOutline />, id: "home" },
@@ -22,6 +23,7 @@ const data = [
 const NavBars = ({ refs, isNavBarVisible }) => {
   const [activeId, setActiveId] = useState(null);
   const [hoveredId, setHoveredId] = useState(null);
+ 
 
   const liFixed =
     "w-11/12 mx-3 my-2 min-h-12 min-w-12 rounded-full flex flex-row items-center pl-4 py-3 gap-2";
@@ -32,8 +34,9 @@ const NavBars = ({ refs, isNavBarVisible }) => {
     const scrollPosition = window.scrollY + window.innerHeight / 2;
 
     Object.keys(refs).forEach((id) => {
+
       const section = refs[id].current;
-  console.log(section , "kabaye")
+
       if (section) {
         const { offsetTop, offsetHeight } = section;
         if (
@@ -50,6 +53,7 @@ const NavBars = ({ refs, isNavBarVisible }) => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+    
     };
   }, [refs]);
 
@@ -77,8 +81,9 @@ const NavBars = ({ refs, isNavBarVisible }) => {
               activeId === el.id ? "bg-blue-700 text-white" : "bg-gray-200"
             } `}
             onClick={() => {
-              console.log(refs, activeId, "scrool ref");
-              const section = refs[el.id].current;
+             
+              const section = isNavBarVisible? refs.current :refs[el.id].current
+              console.log(section,refs, "refs ntoya")
 
               if (section) {
                 section.scrollIntoView({ behavior: "smooth" });

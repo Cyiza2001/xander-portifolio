@@ -27,7 +27,7 @@ export default function App() {
   return (
     <>
     
-      <NavBars refs={refs} />
+      <NavBars refs={refs}/>
       <div>
         <Home ref={refs["home"]} />
         <About ref={refs["about"]} />
