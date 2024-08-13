@@ -82,9 +82,8 @@ const NavBars = ({ refs, isNavBarVisible }) => {
             } `}
             onClick={() => {
              
-              const section = isNavBarVisible? refs.current :refs[el.id].current
-              console.log(section,refs, "refs ntoya")
-
+              const section = refs[el.id].current
+          
               if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
               }

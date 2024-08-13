@@ -64,7 +64,7 @@ const Home = forwardRef((props, ref) => {
         }`}
         style={{ minHeight: "100vh", minWidth: "50vw" }}
       >
-        <NavBars isNavBarVisible={isNavBarVisible} refs={ref} />
+        <NavBars isNavBarVisible={isNavBarVisible} refs={props.refs} />
       </div>
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-white opacity-70 z-0"></div>
 

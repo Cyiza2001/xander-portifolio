@@ -29,7 +29,8 @@ export default function App() {
     
       <NavBars refs={refs}/>
       <div>
-        <Home ref={refs["home"]} />
+      <Home ref={refs["home"]} refs={refs} />
+
         <About ref={refs["about"]} />
         <Achievements ref={refs["achievements"]} />
         <Certificates ref={refs["certificates"]} />
