@@ -53,7 +53,15 @@ const Home = forwardRef((props, ref) => {
     >
       <div
         className={isNavBarVisible ? crossStyles : menuStyles}
-        onClick={toggleNavBar}
+        onClick={
+          () =>{
+            toggleNavBar()
+            if(isNavBarVisible){
+              window.scrollTo(0, 0);
+
+            }
+          }
+        }
       >
         {isNavBarVisible ? <ImCross /> : <MdMenu />}
       </div>

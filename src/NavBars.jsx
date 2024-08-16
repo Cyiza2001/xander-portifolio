@@ -83,10 +83,10 @@ const NavBars = ({ refs, isNavBarVisible }) => {
             onClick={() => {
              
               const section = refs[el.id].current
-          
               if (section) {
                 section.scrollIntoView({ behavior: "smooth" });
               }
+              
             }}
             onMouseEnter={() => setHoveredId(el.id)}
             onMouseLeave={() => setHoveredId(null)}
