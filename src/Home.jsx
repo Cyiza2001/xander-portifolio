@@ -56,10 +56,7 @@ const Home = forwardRef((props, ref) => {
         onClick={
           () =>{
             toggleNavBar()
-            if(isNavBarVisible){
-              window.scrollTo(0, 0);
-
-            }
+            isNavBarVisible? document.body.style.overflow = 'auto': document.body.style.overflow = 'hidden' 
           }
         }
       >
