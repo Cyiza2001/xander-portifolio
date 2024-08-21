@@ -16,7 +16,6 @@ import ScrollUp from "./ScrollUp";
 const ids = [
   "home", "about", "achievements", "certificates", "projects", "blogs", "services", "testimonials", "contact"
 ];
-
 export default function App() {
   const refs = ids.reduce((acc, id) => {
     acc[id] = useRef(null);
