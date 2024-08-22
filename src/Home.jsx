@@ -76,8 +76,8 @@ const Home = forwardRef((props, ref) => {
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-white opacity-70 z-0"></div>
 
       <div className="z-10 flex flex-col " style = {{ opacity: isVisible ? '1' : '0',
-        transform: isVisible ? 'translateZ(0)' : 'translateZ(300px)',
-        transition: 'transform 3s ease-in-out, opacity 3s ease-in-out'}}>
+        transform: isVisible ? 'translateZ(0) translateX(0)' : 'translateZ(-900px) translateX(300px)',
+        transition: 'transform 1s ease-in-out, opacity 1s ease-in-out'}}>
         <div className="flex sm:text-6xl text-4xl font-bold pb-4">
           Tech Enthusiast
         </div>
