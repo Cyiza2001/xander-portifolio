@@ -17,8 +17,13 @@ const UseVisibility = (ref)=>{
       if (ref.current) observer.observe(ref.current);
       
     }, [ref]);
+    const getStyles = () =>  ( {
+        opacity: isVisible ? '1' : '0',
+        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        transition: 'transform 2s ease, opacity 2s ease',
+});
 
-    return isVisible;
+    return {isVisible, getStyles};
 
 }
 

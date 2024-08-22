@@ -2,6 +2,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { CiMobile2 } from "react-icons/ci";
 import { forwardRef } from "react";
+import UseVisibility from "./UseVisibility";
 
 const contact = [
     {icon:<CiLocationOn />, name:"Location:", description:"Kigali , Rwanda" },
@@ -10,8 +11,11 @@ const contact = [
 ]
 
 const Contact = forwardRef( (props, ref)=>{
+  const {isVisible, getStyles} =  UseVisibility(ref)
     return(
-        <section ref={ref} id="contact"  className="flex flex-col ">
+        <section ref={ref} id="contact"  className="flex flex-col " style={{
+          ...getStyles()
+        }}>
            <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-28 mb-6">CONTACT</div>
         <div className="flex" style={{ width: '122.83px' }}>

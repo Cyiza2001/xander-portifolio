@@ -2,10 +2,12 @@ import { FaDesktop } from "react-icons/fa6";
 import { IoLogoGithub } from "react-icons/io";
 import { FaDatabase } from "react-icons/fa6";
 import { forwardRef, useState } from "react";
+import UseVisibility from "./UseVisibility";
 
 
 
 const Services = forwardRef((props, ref)=>{
+  const {isVisible, getStyles} =  UseVisibility(ref)
   const [hoveredId, setHoveredId] = useState(null);
 
 const webBasedSystemsId = 1;
@@ -20,7 +22,9 @@ const services = [
 
     return(
 
-        <div ref={ref}   className="flex flex-col">
+        <div ref={ref}   className="flex flex-col" style={{
+          ...getStyles()
+        }}>
         <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
           SERVICES

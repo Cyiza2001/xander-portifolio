@@ -9,6 +9,7 @@ import { IoLogoInstagram } from "react-icons/io5";
 import { AiOutlineWhatsApp } from "react-icons/ai";
 import { MdMenu } from "react-icons/md";
 import { ImCross } from "react-icons/im";
+import UseVisibility from "./UseVisibility";
 
 const media = [
   {
@@ -38,6 +39,7 @@ const Home = forwardRef((props, ref) => {
     deleteSpeed: 50,
     delaySpeed: 1000,
   });
+  const {isVisible, getStyles} =  UseVisibility(ref)
   const [hoveredId, setHoveredId] = useState(null);
   const [isNavBarVisible, setIsNavBarVisible] = useState(false);
   const toggleNavBar = () => setIsNavBarVisible(!isNavBarVisible);
@@ -73,7 +75,9 @@ const Home = forwardRef((props, ref) => {
       </div>
       <div className="absolute top-0 right-0 bottom-0 left-0 bg-white opacity-70 z-0"></div>
 
-      <div className="z-10 flex flex-col ">
+      <div className="z-10 flex flex-col " style = {{ opacity: isVisible ? '1' : '0',
+        transform: isVisible ? 'translateZ(0)' : 'translateZ(300px)',
+        transition: 'transform 3s ease-in-out, opacity 3s ease-in-out'}}>
         <div className="flex sm:text-6xl text-4xl font-bold pb-4">
           Tech Enthusiast
         </div>

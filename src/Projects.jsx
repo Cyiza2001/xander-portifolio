@@ -1,5 +1,6 @@
 import { forwardRef } from "react"
 import cert from "/images/certify.jpg"
+import UseVisibility from "./UseVisibility";
 const projects= [ {projIcon: cert },
     {projIcon: cert },
     {projIcon: cert },
@@ -13,8 +14,11 @@ const projects= [ {projIcon: cert },
 ]
 
 const Projects  =forwardRef( (props, ref)=>{
+  const {isVisible, getStyles} =  UseVisibility(ref)
     return(
-        <div ref={ref}   className="flex flex-col">
+        <div ref={ref}   className="flex flex-col"  style={{
+          ...getStyles()
+        }}>
 
     <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
