@@ -181,6 +181,7 @@ import React, { forwardRef, useEffect, useState } from 'react';
 import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import picture from "/images/pic.png";
+import UseVisibility from './UseVisibility';
 
 const progress = [
   { skill: "HTML & CSS", percentage: "98%" },
@@ -194,24 +195,8 @@ const progress = [
 ];
 
 const About = forwardRef((props, ref) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    
-  }, [ref]);
-
+ 
+  UseVisibility(ref)
   return (
     <div
       ref={ref}
