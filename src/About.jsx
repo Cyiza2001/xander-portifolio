@@ -157,7 +157,7 @@
 //               <p>{el.percentage}</p>
 //             </div>
 //             <div className="bg-gray-200 h-2"> 
-//               <div className="bg-blue-700 h-2" style={{ width: `${el.percentage}`,opacity:isVisible? "1":"0",transform:isVisible?`translateX(${el.percentage}px)`:"translateX(0)" ,transition:"opacity 2s ease transform 2s ease"}}></div>
+//               <div className="bg-blue-700 h-2" style={{ width: isVisible ? el.percentage : '0%'}}></div>
 //             </div>
 //           </div>
 //         ))}
