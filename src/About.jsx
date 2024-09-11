@@ -169,7 +169,7 @@
 // export default About;
 
 
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState, useRef } from 'react';
 import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import picture from "/images/pic.png";
@@ -187,8 +187,22 @@ const progress = [
 
 const About = forwardRef((props, ref) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const skillsRef = useRef(null);
 
   useEffect(() => {
+
+    const skillsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setSkillsVisible(true);
+            skillsObserver.unobserve(entry.target); 
+          }
+        });
+      },
+      { threshold: 0.3 } 
+    );
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -204,11 +218,18 @@ const About = forwardRef((props, ref) => {
     if (ref.current) {
       observer.observe(ref.current);
     }
+    if (skillsRef.current) {
+      skillsObserver.observe(skillsRef.current); 
+    }
 
     return () => {
       if (ref.current) {
         observer.unobserve(ref.current);
       }
+      if (skillsRef.current) {
+        skillsObserver.unobserve(skillsRef.current);
+      }
+
     };
   }, [ref]);
 
@@ -329,7 +350,7 @@ const About = forwardRef((props, ref) => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center" ref={skillsRef}>
         <div className="flex font-bold text-2xl mt-14 mb-6">KNOWLEDGE AND SKILLS</div>
         <div className="flex" style={{ width: "122.83px" }}>
           <div
@@ -351,8 +372,8 @@ const About = forwardRef((props, ref) => {
             </div>
             <div className="bg-gray-200 h-2"> 
               <div 
-                className={`bg-blue-700 h-2 transition-all duration-1000 ease-out ${isVisible ? 'w-full' : 'w-0'}`}
-                style={{ width: isVisible ? el.percentage : '0%' }}
+                className={`bg-blue-700 h-2 transition-all duration-1000 ease-out`}
+                style={{ width: skillsVisible ? el.percentage : '0%' }}
               ></div>
             </div>
           </div>
