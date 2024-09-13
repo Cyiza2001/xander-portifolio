@@ -173,6 +173,7 @@ import React, { forwardRef, useEffect, useState, useRef } from 'react';
 import { FaGlassCheers } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import picture from "/images/pic.png";
+import UseVisibility from './UseVisibility';
 
 const progress = [
   { skill: "HTML & CSS", percentage: "98%" },
@@ -185,8 +186,8 @@ const progress = [
   { skill: "Jest & Supertest", percentage: "80%" },
 ];
 
-const About = forwardRef((props, ref) => {
-  const [isVisible, setIsVisible] = useState(false);
+const About = forwardRef((props, ref) => {  
+  const {isVisible, getStyles} =  UseVisibility(ref)
   const [skillsVisible, setSkillsVisible] = useState(false);
   const skillsRef = useRef(null);
 
@@ -203,33 +204,11 @@ const About = forwardRef((props, ref) => {
       },
       { threshold: 1 } 
     );
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    if (skillsRef.current) {
-      skillsObserver.observe(skillsRef.current); 
-    }
+   
+    if (skillsRef.current) skillsObserver.observe(skillsRef.current); 
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-      if (skillsRef.current) {
-        skillsObserver.unobserve(skillsRef.current);
-      }
-
+      if (skillsRef.current) skillsObserver.unobserve(skillsRef.current);
     };
   }, [ref]);
 
@@ -238,7 +217,7 @@ const About = forwardRef((props, ref) => {
       ref={ref}
       className={"flex flex-col px-4 transition-opacity duration-1000 "}
       style={{
-        opacity: isVisible ? 1 : 0,
+        ...getStyles()
       }}
     >
       <div className="flex flex-col justify-center items-center">
@@ -373,7 +352,7 @@ const About = forwardRef((props, ref) => {
             <div className="bg-gray-200 h-2"> 
               <div 
                 className={`bg-blue-700 h-2 transition-all duration-1000 ease-out` }
-                style={{ width: skillsVisible ? el.percentage : '0%' }} ref={skillsRef}
+                style={{ width: skillsVisible ? el.percentage : '1%' }} ref={skillsRef}
               ></div>
             </div>
           </div>
