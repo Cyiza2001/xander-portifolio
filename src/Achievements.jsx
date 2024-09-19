@@ -1,71 +1,187 @@
+// import { HiOutlineEmojiHappy } from "react-icons/hi";
+// import { AiOutlineProject } from "react-icons/ai";
+// import { LiaCertificateSolid } from "react-icons/lia";
+// import { IoMdTime } from "react-icons/io";
+// import { FaAt } from "react-icons/fa";
+// import { forwardRef } from "react";
+// import UseVisibility from "./UseVisibility";
+// const stats = [
+//   {
+//     icon: <HiOutlineEmojiHappy style={{ width: "30px", height: "30px" }} />,
+//     number: "618",
+//     title: "Happy Clients",
+//   },
+//   {
+//     icon: <AiOutlineProject style={{ width: "30px", height: "30px" }} />,
+//     number: "314",
+//     title: "Completed Projects",
+//   },
+//   {
+//     icon: <LiaCertificateSolid style={{ width: "30px", height: "30px" }} />,
+//     number: "37",
+//     title: "Awards",
+//   },
+//   {
+//     icon: <IoMdTime style={{ width: "30px", height: "30px" }} />,
+//     number: "14",
+//     title: "Working Hours per day",
+//   },
+// ];
+
+// const Achievements = forwardRef((props, ref) => {
+
+//   const {isVisible, getStyles} =  UseVisibility(ref)
+//   return (
+//     <div ref={ref}   className="flex flex-col px-4"    style={{
+//       ...getStyles()
+//     }}>
+//       <div className="flex flex-col  justify-center items-center">
+//         <div className="flex font-bold text-2xl mt-14 mb-6">STATS</div>
+//         <div className="flex " style={{ width: "122.83px" }}>
+//           <div
+//             className="flex  justify-center items-center w-full rounded bg-gray-200 "
+//             style={{ height: "2px" }}
+//           >
+//             <div className="h-1 rounded bg-blue-700  w-12"></div>
+//           </div>
+//         </div>
+//         <p className="flex  my-6 font-normal">Achievements & Statistics</p>
+//       </div>
+//       {/***********************************************STATS DIVS DOWN HERE************************************************************** */}
+//       <div className="flex sm:flex-row flex-col sm:gap-36  gap-10 justify-center items-center mt-3 px-14">
+//         {stats.map((el) => {
+//           return (
+//             <div className="flex flex-col gap-2 justify-center items-center">
+//               <div className="flex items-center justify-center bg-blue-700 rounded-full h-12 w-12">
+//                 <div className="text-white">{el.icon}</div>
+//               </div>
+
+//               <p className="font-bold text-3xl">{el.number}</p>
+//               <p className="font-thin">{el.title}</p>
+//             </div>
+//           );
+//         })}
+//       </div>
+
+
+
+
+
+
+
+
+     
+//     </div>
+//   );
+// });
+
+// export default Achievements;
+
+import { useState, useEffect } from "react";
 import { HiOutlineEmojiHappy } from "react-icons/hi";
 import { AiOutlineProject } from "react-icons/ai";
 import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { FaAt } from "react-icons/fa";
 import { forwardRef } from "react";
-import UseVisibility from "./UseVisibility";
+import UseVisibility from "./UseVisibility"; // Ensure UseVisibility is correctly imported or implemented
+
 const stats = [
   {
     icon: <HiOutlineEmojiHappy style={{ width: "30px", height: "30px" }} />,
-    number: "618",
+    number: 618,
     title: "Happy Clients",
   },
   {
     icon: <AiOutlineProject style={{ width: "30px", height: "30px" }} />,
-    number: "314",
+    number: 314,
     title: "Completed Projects",
   },
   {
     icon: <LiaCertificateSolid style={{ width: "30px", height: "30px" }} />,
-    number: "37",
+    number: 37,
     title: "Awards",
   },
   {
     icon: <IoMdTime style={{ width: "30px", height: "30px" }} />,
-    number: "14",
+    number: 14,
     title: "Working Hours per day",
   },
 ];
 
 const Achievements = forwardRef((props, ref) => {
+  const { isVisible, getStyles } = UseVisibility(ref);
+  const [animatedStats, setAnimatedStats] = useState(
+    stats.map(() => 0) 
+  );
 
-  const {isVisible, getStyles} =  UseVisibility(ref)
+
+  const maxNumber = Math.max(...stats.map((stat) => stat.number));
+  const animationDuration = 2000;
+  const steps = 50; 
+  const intervalDuration = animationDuration / steps;
+
+  // Function to handle the number animation
+  const animateNumbers = () => {
+    const newStats = stats.map((stat, index) => {
+      const currentNumber = animatedStats[index];
+      const targetNumber = stat.number;
+
+      // Calculate proportional increment for each stat
+      const increment = (targetNumber / maxNumber) * (maxNumber / steps);
+
+      if (currentNumber < targetNumber) {
+        return Math.min(currentNumber + increment, targetNumber);
+      }
+      return currentNumber;
+    });
+    setAnimatedStats(newStats);
+  };
+
+  useEffect(() => {
+    if (isVisible) {
+      const intervalId = setInterval(() => {
+        animateNumbers();
+      }, intervalDuration); // Adjust interval based on total animation duration
+      return () => clearInterval(intervalId); // Clear the interval when the component unmounts or becomes invisible
+    }
+  }, [isVisible, animatedStats]);
+
   return (
-    <div ref={ref}   className="flex flex-col px-4"    style={{
-      ...getStyles()
-    }}>
-      <div className="flex flex-col  justify-center items-center">
+    <div ref={ref} className="flex flex-col px-4" style={getStyles()}>
+      {/* Header Section */}
+      <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">STATS</div>
         <div className="flex " style={{ width: "122.83px" }}>
           <div
-            className="flex  justify-center items-center w-full rounded bg-gray-200 "
+            className="flex justify-center items-center w-full rounded bg-gray-200 "
             style={{ height: "2px" }}
           >
-            <div className="h-1 rounded bg-blue-700  w-12"></div>
+            <div className="h-1 rounded bg-blue-700 w-12"></div>
           </div>
         </div>
         <p className="flex  my-6 font-normal">Achievements & Statistics</p>
       </div>
-      {/***********************************************STATS DIVS DOWN HERE************************************************************** */}
-      <div className="flex sm:flex-row flex-col sm:gap-36  gap-10 justify-center items-center mt-3 px-14">
-        {stats.map((el) => {
-          return (
-            <div className="flex flex-col gap-2 justify-center items-center">
-              <div className="flex items-center justify-center bg-blue-700 rounded-full h-12 w-12">
-                <div className="text-white">{el.icon}</div>
-              </div>
 
-              <p className="font-bold text-3xl">{el.number}</p>
-              <p className="font-thin">{el.title}</p>
+      {/* Stats Section */}
+      <div className="flex sm:flex-row flex-col sm:gap-36 gap-10 justify-center items-center mt-3 px-14">
+        {stats.map((el, index) => (
+          <div key={index} className="flex flex-col gap-2 justify-center items-center">
+            <div className="flex items-center justify-center bg-blue-700 rounded-full h-12 w-12">
+              <div className="text-white">{el.icon}</div>
             </div>
-          );
-        })}
+
+            {/* Animated number */}
+            <p className="font-bold text-3xl">{Math.floor(animatedStats[index])}</p>
+            <p className="font-thin">{el.title}</p>
+          </div>
+        ))}
       </div>
+  
 
-      {/******************************************************** DEGREE AND ATTAINMENT **********************************************/}
+           {/******************************************************** DEGREE AND ATTAINMENT **********************************************/}
 
-      <div className="flex flex-col justify-center items-center">
+           <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">
           DEGREE AND ATTAINMENT
         </div>
@@ -78,9 +194,10 @@ const Achievements = forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      {/*********** ****************************************** DEGREE SECTION ********************************************************/}
 
-      <div className="flex sm:flex-row flex-col justify-center sm:px-0 px-4  w-screen  gap-4 mt-4">
+
+            <div className="flex sm:flex-row flex-col justify-center sm:px-0 px-4  w-screen  gap-4 mt-4">
+              
       <div>
       <div className="flex flex-col justify-center items-start ">
         <h1 className="font-bold text-2xl m-2">Degree</h1>
@@ -246,7 +363,7 @@ const Achievements = forwardRef((props, ref) => {
       </div>
       </div>
       </div>
-     
+
     </div>
   );
 });
