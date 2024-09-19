@@ -342,9 +342,9 @@ const About = forwardRef((props, ref) => {
         <p className="flex my-6 font-normal">Languages & Frameworks & Skills</p>
       </div>
 
-      <div className="flex flex-wrap w-screen sm:px-24" >
+      {/* <div className="flex flex-wrap w-screen sm:px-24" >
         {progress.map((el, index) => (
-          <div key={index} className="flex flex-col justify-between sm:w-1/2 w-screen pl-6 pr-14 sm:px-0">
+          <div key={index} className="flex flex-col justify-between w-2/4  pl-6 pr-14 sm:px-0">
             <div className="flex flex-row justify-between">
               <p>{el.skill}</p>
               <p>{el.percentage}</p>
@@ -357,7 +357,31 @@ const About = forwardRef((props, ref) => {
             </div>
           </div>
         ))}
+      </div> */}
+
+<div className="flex flex-wrap w-full sm:px-24">
+  {progress.map((el, index) => (
+    <div
+      key={index}
+      className="flex flex-col justify-between w-[48%] mb-4 mx-2" // Reduced width to 48% and added horizontal margin
+    >
+      <div className="flex flex-row justify-between">
+        <p>{el.skill}</p>
+        <p>{el.percentage}</p>
       </div>
+      <div className="bg-gray-200 h-2">
+        <div
+          className={`bg-blue-700 h-2 transition-all duration-1000 ease-out`}
+          style={{ width: skillsVisible ? el.percentage : "1%" }}
+          ref={skillsRef}
+        ></div>
+      </div>
+    </div>
+  ))}
+</div>
+
+
+
     </div>
   );
 });
