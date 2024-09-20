@@ -84,7 +84,7 @@ import { LiaCertificateSolid } from "react-icons/lia";
 import { IoMdTime } from "react-icons/io";
 import { FaAt } from "react-icons/fa";
 import { forwardRef } from "react";
-import UseVisibility from "./UseVisibility"; // Ensure UseVisibility is correctly imported or implemented
+import UseVisibility from "./UseVisibility";
 
 const stats = [
   {
@@ -130,10 +130,9 @@ const Achievements = forwardRef((props, ref) => {
       // Calculate proportional increment for each stat
       const increment = (targetNumber / maxNumber) * (maxNumber / steps);
 
-      if (currentNumber < targetNumber) {
-        return Math.min(currentNumber + increment, targetNumber);
-      }
-      return currentNumber;
+      if (currentNumber < targetNumber) return Math.min(currentNumber + increment, targetNumber);
+      
+return currentNumber;
     });
     setAnimatedStats(newStats);
   };
@@ -142,14 +141,13 @@ const Achievements = forwardRef((props, ref) => {
     if (isVisible) {
       const intervalId = setInterval(() => {
         animateNumbers();
-      }, intervalDuration); // Adjust interval based on total animation duration
-      return () => clearInterval(intervalId); // Clear the interval when the component unmounts or becomes invisible
+      }, intervalDuration); 
+      return () => clearInterval(intervalId); 
     }
   }, [isVisible, animatedStats]);
 
   return (
     <div ref={ref} className="flex flex-col px-4" style={getStyles()}>
-      {/* Header Section */}
       <div className="flex flex-col justify-center items-center">
         <div className="flex font-bold text-2xl mt-14 mb-6">STATS</div>
         <div className="flex " style={{ width: "122.83px" }}>
@@ -162,16 +160,12 @@ const Achievements = forwardRef((props, ref) => {
         </div>
         <p className="flex  my-6 font-normal">Achievements & Statistics</p>
       </div>
-
-      {/* Stats Section */}
       <div className="flex sm:flex-row flex-col sm:gap-36 gap-10 justify-center items-center mt-3 px-14">
         {stats.map((el, index) => (
           <div key={index} className="flex flex-col gap-2 justify-center items-center">
             <div className="flex items-center justify-center bg-blue-700 rounded-full h-12 w-12">
               <div className="text-white">{el.icon}</div>
             </div>
-
-            {/* Animated number */}
             <p className="font-bold text-3xl">{Math.floor(animatedStats[index])}</p>
             <p className="font-thin">{el.title}</p>
           </div>
@@ -196,7 +190,7 @@ const Achievements = forwardRef((props, ref) => {
       </div>
 
 
-            <div className="flex sm:flex-row flex-col justify-center sm:px-0 px-4  w-screen  gap-4 mt-4">
+      <div className="flex sm:flex-row flex-col justify-center sm:px-0 px-4  w-screen  gap-4 mt-4">
               
       <div>
       <div className="flex flex-col justify-center items-start ">
