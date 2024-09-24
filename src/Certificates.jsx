@@ -9,8 +9,7 @@ const certificates= [ {certIcon: cert },
   {certIcon: cert },
   {certIcon: cert },
   {certIcon: cert },
-  {certIcon: cert },
- 
+  {certIcon: cert }, 
 ]
 
 const Certificates  = forwardRef ((props, ref)=>{
@@ -37,13 +36,22 @@ const Certificates  = forwardRef ((props, ref)=>{
       <div className="flex flex-wrap  my-20 justify-center items-center ">
       { certificates.map(el =>{
         return(
-          <div className="relative overflow-hidden m-2  h-52 w-80">
-          <img src={`${el.certIcon}`} alt="certicicate" className="h-52 w-80 object-cover" />
+          <div className="relative overflow-hidden m-2  h-52 border-red-700">
+            <div>   <img src={`${el.certIcon}`} alt="certicicate" className="h-52 w-80 object-cover" /></div>
+       
          </div>
         )
       })
      
+
 }
+
+
+<div className="absolute z-50 bg-red-600 opacity-0 hover:opacity-100 transition-opacity duration-300">
+            <div className="h-48 w-2 bg-black "></div>
+            
+          </div>
+        
       </div>
        
        
