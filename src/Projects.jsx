@@ -4,12 +4,7 @@ import UseVisibility from "./UseVisibility";
 const projects= [ {projIcon: cert },
     {projIcon: cert },
     {projIcon: cert },
-    {projIcon: cert },
-    {projIcon: cert },
-    {projIcon: cert },
-    {projIcon: cert },
-    {projIcon: cert },
-    {projIcon: cert },
+  
  
 ]
 
