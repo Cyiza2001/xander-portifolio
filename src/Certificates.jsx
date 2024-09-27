@@ -120,7 +120,7 @@ const Certificates = forwardRef((props, ref) => {
 
                 <div className="flex flex-col items-end mt-0 mr-4 mb-2">
                   <div className="h-24 w-1 bg-black"></div>
-                  <div className="h-1 w-28 bg-black"></div>
+                  <div className="h-1 w-24 bg-black"></div>
                   
                 </div>
               </div>
