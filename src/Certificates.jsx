@@ -64,6 +64,7 @@
 import { forwardRef } from "react";
 import cert from "/images/certify.jpg";
 import UseVisibility from "./UseVisibility";
+import { LuZoomIn } from "react-icons/lu";
 
 const certificates = [
   { certIcon: cert },
@@ -111,12 +112,20 @@ const Certificates = forwardRef((props, ref) => {
               />
 
               {/* Absolute div for hover effect */}
-              <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-50 transition-opacity duration-1000  ">
+              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 bg-opacity-20 transition-opacity duration-1000  ">
                 {/* Content inside the hover effect */}
                 <div className="flex flex-col items-start mt-2 mr-4 ml-4">
                   <div className="h-1 w-28 bg-black"></div>
                   <div className="h-20 w-1 bg-black"></div>
                 </div>
+                   {/* zoom in icon and certificate description */}
+                   <div className ="flex flex-col items-center ">
+
+                    <h1 className="font-bold text-2xl">Modern Js Fundamentals</h1>
+                     <div><LuZoomIn /></div>
+
+                   </div>
+              
 
                 <div className="flex flex-col items-end mt-0 mr-4 mb-2">
                   <div className="h-24 w-1 bg-black"></div>
