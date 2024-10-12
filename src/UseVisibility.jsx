@@ -27,4 +27,4 @@ const UseVisibility = (ref)=>{
 
 }
 
-export default UseVisibility
+export default UseVisibility 

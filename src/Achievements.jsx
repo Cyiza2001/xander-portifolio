@@ -143,7 +143,7 @@ return currentNumber;
         animateNumbers();
       }, intervalDuration); 
       return () => clearInterval(intervalId); 
-    }
+    }                     
   }, [isVisible, animatedStats]);
 
   return (
