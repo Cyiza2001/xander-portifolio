@@ -59,15 +59,7 @@
 //               <div className="absolute inset-0 z-10">
 //                 {/* Content inside the hover effect */}
 //                 <div className="  bg-black opacity-0  hover:opacity-50 bg-opacity-50 transition-opacity duration-1000 ">
-//                 <div className="flex flex-col items-start mt-2 mr-4 ml-4">
-//                   <div className="h-1 w-28 bg-black"></div>
-//                   <div className="h-20 w-1 bg-black"></div>
-//                 </div>
-                
-//                 <div className="flex flex-col items-end mt-0 mr-4 mb-2">
-//                   <div className="h-24 w-1 bg-black"></div>
-//                   <div className="h-1 w-24 bg-black"></div>
-//                 </div>
+//                 
 //                 </div>
 //                        {/* zoom in icon and certificate description */}
              
@@ -130,17 +122,6 @@ const Certificates = forwardRef((props, ref) => {
               key={index}
               className="relative overflow-hidden m-2 h-52 w-80 group"
             >
-              {/* Top-left right-angle corner */}
-              <div className="absolute top-0 left-0 z-20">
-                <div className="h-2 w-8 bg-blue-700"></div>
-                <div className="h-8 w-2 bg-blue-700"></div>
-              </div>
-
-              {/* Bottom-right right-angle corner */}
-              <div className="absolute bottom-0 right-0 z-20">
-                <div className="h-2 w-8 bg-blue-700"></div>
-                <div className="h-8 w-2 bg-blue-700"></div>
-              </div>
 
               {/* Certificate Image */}
               <img
@@ -148,16 +129,29 @@ const Certificates = forwardRef((props, ref) => {
                 alt="certificate"
                 className="h-52 w-80 object-cover transition-transform duration-300 group-hover:scale-105"
               />
+                 <div className=" bg-black opacity-0 group-hover:opacity-90 group-hover:bg-opacity-90 group-hover:transition-opacity duration-300">
+                            <div className="flex flex-col items-start mt-2 mr-4 ml-4">
+                              <div className="h-1 w-28 bg-black"></div>
+                              <div className="h-20 w-1 bg-black"></div>
+                            </div>
+                            
+                            <div className="flex flex-col items-end mt-0 mr-4 mb-2">                  
+                               <div className="h-24 w-1 bg-black"></div>
+                              <div className="h-1 w-24 bg-black"></div>
+                            </div>
 
-              {/* Overlay with zoom icon and title */}
-              <div className="flex flex-col items-center justify-center absolute inset-0 bg-black bg-opacity-60 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h1 className="font-bold text-2xl text-center text-black px-4 mb-2">
-                  {el.title}
-                </h1>
-                <div className="font-bold text-black text-xl">
-                  <LuZoomIn />
-                </div>
-              </div>
+                          {/* Overlay with zoom icon and title */}
+                          <div className="flex flex-col items-center justify-center absolute inset-0">
+                            <h1 className="font-bold text-2xl text-center text-black px-4 mb-2">
+                              {el.title}
+                            </h1>
+                            <div className="font-bold text-black text-xl">
+                              <LuZoomIn />
+                            </div>
+                          </div>
+
+                 </div>
+                
 
               {/* Border effect */}
               <div className="absolute inset-0 z-0">
