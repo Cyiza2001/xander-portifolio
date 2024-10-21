@@ -41,7 +41,7 @@ const services = [
     <div className="flex sm:flex-row flex-col gap-20 mt-7 mb-20">
     {services.map((el)=>{
       return(
-        <div className="flex flex-col gap-3 relative justify-center items-center w-72 h-80 my-10 bg-white hover:shadow-xl " key={el.id}  onMouseEnter={() => {
+        <div className="flex flex-col gap-3 relative justify-center items-center w-72 h-80 my-10 bg-white shadow-xl hover:-translate-y-4 transition-transform duration-300" key={el.id}  onMouseEnter={() => {
          
           setHoveredId(el.id)
       

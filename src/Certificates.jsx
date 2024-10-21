@@ -149,10 +149,21 @@ const Certificates = forwardRef((props, ref) => {
                             <h1 className="font-bold text-xl text-center px-4 mb-2">
                               {el.title}
                             </h1>
-                            <div className="font-bold text-black text-xl hover:text-blue-700 ">
+                            {/* <div className="font-bold text-black text-xl hover:text-blue-700 ">
                               <LuZoomIn  />
                               <button className="bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 hidden hover:">Full Info: press</button>
                             </div>
+                          </div> */}
+                          <div className="relative group flex items-center justify-center">
+                                 <div className="font-bold text-black text-xl">
+                                      <LuZoomIn className="group-hover:text-blue-700" />
+                                 </div>
+  
+                                      {/* Tooltip */}
+                                <button className="absolute left-0 top-2 bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                       Full Info: press
+                                </button>
+                          </div>
                           </div>
                 
 
