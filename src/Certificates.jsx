@@ -150,21 +150,22 @@ const Certificates = forwardRef((props, ref) => {
                             <h1 className="font-bold text-xl text-center px-4 mb-2">
                               {el.title}
                             </h1>
-                            {/* <div className="font-bold text-black text-xl hover:text-blue-700 ">
-                              <LuZoomIn  />
-                              <button className="bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 hidden hover:">Full Info: press</button>
-                            </div>
-                          </div> */}
+                          
                           <div className="relative flex self-center">
-                                 <div className="font-bold text-black text-xl">
-                                      <LuZoomIn className="hover:text-blue-700" />
-                                              {/* Tooltip */}
-                                <button className="absolute inset-0 top-2 bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 opacity-0 hover:opacity-100 transition-opacity">
-                                       Full Info: press
-                                </button>
-                                 </div>
-  
-                              
+                                  <div className="font-bold text-black text-xl " onMouseEnter={() => 
+                                                
+                                                  sethoverZoom(true)
+                                                }
+                                                onMouseLeave={() => sethoverZoom(null)}
+                                                >
+                                    <LuZoomIn className={hoverZoom? "text-blue-700": "text-black"} />
+                                   </div>
+                                            
+                                      {/* Tooltip */}
+                                   <button  className="absolute top-full left-0  bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 transition-opacity duration-300" 
+                                            style={{ opacity: hoverZoom ? 1 : 0, width: 'auto',whiteSpace: 'nowrap' }}>
+                                                  Full Info: press
+                                    </button> 
                           </div>
                           </div>
                 
