@@ -78,7 +78,7 @@
 // export default Certificates;
 
 
-import { forwardRef } from "react";
+import { forwardRef, useState } from "react";
 import cert from "/images/certify.jpg";
 import UseVisibility from "./UseVisibility";
 import { LuZoomIn } from "react-icons/lu";
@@ -91,6 +91,7 @@ const certificates = [
 
 const Certificates = forwardRef((props, ref) => {
   const { isVisible, getStyles } = UseVisibility(ref);
+  const [hoverZoom, sethoverZoom] = useState(false)
 
   return (
     <div
@@ -145,7 +146,7 @@ const Certificates = forwardRef((props, ref) => {
                  </div>
 
                   {/* Overlay with zoom icon and title */}
-                  <div className="flex flex-col items-center justify-center absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  <div className="flex flex-col items-center justify-center absolute inset-0 opacity-0 shadow-black group-hover:opacity-100 transition-opacity duration-300 z-20">
                             <h1 className="font-bold text-xl text-center px-4 mb-2">
                               {el.title}
                             </h1>
@@ -154,15 +155,16 @@ const Certificates = forwardRef((props, ref) => {
                               <button className="bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 hidden hover:">Full Info: press</button>
                             </div>
                           </div> */}
-                          <div className="relative group flex items-center justify-center">
+                          <div className="relative flex self-center">
                                  <div className="font-bold text-black text-xl">
-                                      <LuZoomIn className="group-hover:text-blue-700" />
-                                 </div>
-  
-                                      {/* Tooltip */}
-                                <button className="absolute left-0 top-2 bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                                      <LuZoomIn className="hover:text-blue-700" />
+                                              {/* Tooltip */}
+                                <button className="absolute inset-0 top-2 bg-black text-white text-xs px-2 py-2 font-normal mt-3 mx-4 opacity-0 hover:opacity-100 transition-opacity">
                                        Full Info: press
                                 </button>
+                                 </div>
+  
+                              
                           </div>
                           </div>
                 
