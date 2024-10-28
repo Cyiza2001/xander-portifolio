@@ -2,7 +2,7 @@
 import { forwardRef, useState } from "react";
 import cert from "/images/certify.jpg";
 import UseVisibility from "./UseVisibility";
-import detailedPopup from "./Zoom";
+import DetailedPopup from "./Zoom";
 import { LuZoomIn } from "react-icons/lu";
 
 const certificates = [
@@ -15,7 +15,11 @@ const Certificates = forwardRef((props, ref) => {
   const { isVisible, getStyles } = UseVisibility(ref);
   const [hoverZoom, sethoverZoom] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const openModal = () => setIsModalOpen(true)
+  const openModal = () =>{ 
+  
+    setIsModalOpen(true)
+    console.log("open modal")
+  }
   const closeModal = () => setIsModalOpen(false)
 
   return (
@@ -101,7 +105,7 @@ const Certificates = forwardRef((props, ref) => {
                   <div className="w-full h-full border-2 border-white"></div>
                 </div>
               </div>
-              <detailedPopup isOpen={isModalOpen} onClose={closeModal}/>
+              <DetailedPopup isOpen={isModalOpen} onClose={closeModal}/>
             </div>
            
           );
