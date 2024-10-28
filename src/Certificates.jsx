@@ -1,86 +1,8 @@
 
-// import { forwardRef } from "react";
-// import cert from "/images/certify.jpg";
-// import UseVisibility from "./UseVisibility";
-// import { LuZoomIn } from "react-icons/lu";
-
-// const certificates = [
-//   { certIcon: cert },
-//   { certIcon: cert },
-//   { certIcon: cert },
-// ];
-
-// const Certificates = forwardRef((props, ref) => {
-//   const { isVisible, getStyles } = UseVisibility(ref);
-
-//   return (
-//     <div
-//       ref={ref}
-//       className="flex flex-col"
-//       style={{
-//         ...getStyles(),
-//       }}
-//     >
-//       <div className="flex flex-col justify-center items-center">
-//         <div className="flex font-bold text-2xl mt-14 mb-6">
-//           PROFESSIONAL CERTIFICATES
-//         </div>
-//         <div className="flex" style={{ width: "122.83px" }}>
-//           <div
-//             className="flex justify-center items-center w-full rounded bg-gray-200"
-//             style={{ height: "2px" }}
-//           >
-//             <div className="h-1 rounded bg-blue-700 w-12"></div>
-//           </div>
-//         </div>
-//       </div>
-//       {/****************************************CERTFICATES******************************************/}
-//       <div className="flex flex-wrap my-20 justify-center items-center">
-//         {certificates.map((el, index) => {
-//           return (
-//             <div
-//               key={index}
-//               className="relative overflow-hidden m-2 h-52 w-80 group"
-//             >
-//               {/* Certificate Image */}
-//               <img
-//                 src={el.certIcon}
-//                 alt="certificate"
-//                 className="h-52 w-80 object-cover"
-//               />
-//                 <div className ="flex flex-col items-center justify-center absolute inset-0 z-20 opacity-0 hover:opacity-100 transition-opacity duration-1000 ">
-
-// <h1 className="font-bold text-xl">Modern Js Fundamentals</h1>
-// <div className="text-2xl"><LuZoomIn /></div>
-
-// </div>
-
-//               {/* Absolute div for hover effect */}
-//               <div className="absolute inset-0 z-10">
-//                 {/* Content inside the hover effect */}
-//                 <div className="  bg-black opacity-0  hover:opacity-50 bg-opacity-50 transition-opacity duration-1000 ">
-//                 
-//                 </div>
-//                        {/* zoom in icon and certificate description */}
-             
-
-               
-//               </div>
-              
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// });
-
-// export default Certificates;
-
-
 import { forwardRef, useState } from "react";
 import cert from "/images/certify.jpg";
 import UseVisibility from "./UseVisibility";
+import detailedPopup from "./Zoom";
 import { LuZoomIn } from "react-icons/lu";
 
 const certificates = [
@@ -92,6 +14,9 @@ const certificates = [
 const Certificates = forwardRef((props, ref) => {
   const { isVisible, getStyles } = UseVisibility(ref);
   const [hoverZoom, sethoverZoom] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
 
   return (
     <div
@@ -158,7 +83,7 @@ const Certificates = forwardRef((props, ref) => {
                                                 }
                                                 onMouseLeave={() => sethoverZoom(null)}
                                                 >
-                                    <LuZoomIn className={hoverZoom? "text-blue-700": "text-black"} />
+                                    <LuZoomIn className={hoverZoom? "text-blue-700": "text-black"}  onClick={openModal}/>
                                    </div>
                                             
                                       {/* Tooltip */}
@@ -176,7 +101,9 @@ const Certificates = forwardRef((props, ref) => {
                   <div className="w-full h-full border-2 border-white"></div>
                 </div>
               </div>
+              <detailedPopup isOpen={isModalOpen} onClose={closeModal}/>
             </div>
+           
           );
         })}
       </div>
