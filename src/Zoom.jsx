@@ -20,17 +20,26 @@
  
 // export default DetailedPopup;
 
-import React from "react";
-import cert from "/images/certify.jpg"; // Adjust the path as necessary
+import React,{useEffect} from "react";
+import cert from "/images/certify.jpg";
+import { ImCross } from "react-icons/im";
 
 const DetailedPopup = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (isOpen)    document.body.style.overflow = 'hidden';
+    else   document.body.style.overflow ='';
+    
+    // Clean up on unmount
+    return () =>  document.body.style.overflow = '';
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="relative w-3/4 max-w-md p-6 bg-white rounded-lg shadow-lg">
+    <div className="fixed  w-full h-full top-4 bottom-4 right-10 left-10  flex flex-row items-center justify-center z-50 bg-black bg-opacity-50">
+      <div className="relative w-full  h-28 p-6 bg-white rounded-lg shadow-lg">
         <button className="absolute top-2 right-2 text-xl" onClick={onClose}>
-          X
+        <ImCross />
         </button>
         <section>
           <img src={cert} alt="certificate" className="w-full h-auto rounded" />

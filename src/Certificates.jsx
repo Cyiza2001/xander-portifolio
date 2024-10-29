@@ -15,11 +15,7 @@ const Certificates = forwardRef((props, ref) => {
   const { isVisible, getStyles } = UseVisibility(ref);
   const [hoverZoom, sethoverZoom] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const openModal = () =>{ 
-  
-    setIsModalOpen(true)
-    console.log("open modal")
-  }
+  const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
 
   return (
