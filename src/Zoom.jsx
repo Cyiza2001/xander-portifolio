@@ -26,8 +26,8 @@ import { ImCross } from "react-icons/im";
 
 const DetailedPopup = ({ isOpen, onClose }) => {
   useEffect(() => {
-    if (isOpen)    document.body.style.overflow = 'hidden';
-    else   document.body.style.overflow ='';
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow ='';
     
     // Clean up on unmount
     return () =>  document.body.style.overflow = '';
@@ -36,15 +36,15 @@ const DetailedPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed  w-full h-full top-4 bottom-4 right-10 left-10  flex flex-row items-center justify-center z-50 bg-black bg-opacity-50">
-      <div className="relative w-full  h-28 p-6 bg-white rounded-lg shadow-lg">
+    <div className="fixed  max-w-full h-full top-8 bottom-0 right-20 left-20  z-50 bg-black border-8">
+      <div className="relative flex flex-row align-middle ">
         <button className="absolute top-2 right-2 text-xl" onClick={onClose}>
         <ImCross />
         </button>
-        <section>
-          <img src={cert} alt="certificate" className="w-full h-auto rounded" />
+        <section className="w-2/3 h-auto">
+          <img src={cert} alt="certificate"  />
         </section>
-        <section className="mt-4">
+        <section className=" w-1/3 h-28 text-white">
           Full certificate description or any additional content here.
         </section>
       </div>
