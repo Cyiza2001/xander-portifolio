@@ -5,7 +5,8 @@ import { ImCross } from "react-icons/im";
 const DetailedPopup = ({ isOpen, onClose }) => {
 
   const details =[ 
-    {title:"MODERN JAVASCRIPT FUNDAMENTALS", id:"n578jy6lu4", certifier:"Rwanda ICT chamber", auth:"https://academy.ihuzo.rw/certificates/n578jy61u4", description:"This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices"
+    {title:"MODERN JAVASCRIPT FUNDAMENTALS", id:"n578jy6lu4", certifier:"Rwanda ICT chamber", auth:"https://academy.ihuzo.rw/certificates/n578jy61u4", description:"This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices      ////////////      This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices"
+
 
   }]
   const modalRef = useRef(null);
@@ -40,12 +41,12 @@ const DetailedPopup = ({ isOpen, onClose }) => {
         aria-modal="true"
       >
         <div
-          className="fixed inset-0 bg-black bg-opacity-75 "
+          className="fixed inset-0 bg-black bg-opacity-90 "
           aria-hidden="true"
           onClick={onClose}
         ></div>
 
-        <div className="z-50 w-full mx-16 max-h-[90vh] p-6 bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+        <div className="z-50 w-full mx-16 max-h-[90vh] px-0  bg-white rounded-lg shadow-xl overflow-hidden flex flex-col">
           <button
             className="absolute top-4 right-4 text-s font-thin text-white hover:text-white/90"
             onClick={onClose}
@@ -53,8 +54,8 @@ const DetailedPopup = ({ isOpen, onClose }) => {
             <ImCross />
           </button>
 
-          <div className="flex flex-col md:flex-row  overflow-auto h-full">
-            <div className="w-full md:w-2/3 h-auto max-h-[80vh] overflow-y-auto ">
+          <div className="flex flex-col md:flex-row pt-6  h-full">
+            <div className="w-full md:w-2/3 h-auto max-h-[80vh]    ">
               <img
                 src={cert}
                 alt="certificate"
@@ -63,7 +64,7 @@ const DetailedPopup = ({ isOpen, onClose }) => {
             </div>
             {details.map((el)=>{
               return (
-                <div className="w-full md:w-1/3 mt-4 md:mt-0  text-black ">
+                <div className="w-full md:w-1/3 mt-4 md:mt-0  text-black overflow-auto overflow-y-auto ">
                  
                   <div className="rounded-sm shadow-lg py-10 mb-5">
 
