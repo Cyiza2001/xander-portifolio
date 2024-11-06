@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import cert from "/images/certify.jpg";
 import { ImCross } from "react-icons/im";
+import { FaGreaterThan } from "react-icons/fa";
+import { FaLessThan } from "react-icons/fa6";
 
 const DetailedPopup = ({ isOpen, onClose }) => {
 
@@ -53,8 +55,14 @@ const DetailedPopup = ({ isOpen, onClose }) => {
           >
             <ImCross />
           </button>
+          <button className="absolute right-6 top-72 text-2xl text-white bg-black p-2">
+          <FaGreaterThan />
+          </button>
+          <button className="absolute left-6 top-72 text-2xl text-white bg-black p-2">
+          <FaLessThan />
+          </button>
 
-          <div className="flex flex-col md:flex-row pt-6  h-full">
+          <div className="flex flex-col md:flex-row pt-6  h-full overflow-auto ">
             <div className="w-full md:w-2/3 h-auto max-h-[80vh]    ">
               <img
                 src={cert}
@@ -64,11 +72,12 @@ const DetailedPopup = ({ isOpen, onClose }) => {
             </div>
             {details.map((el)=>{
               return (
-                <div className="w-full md:w-1/3 mt-4 md:mt-0  text-black overflow-auto overflow-y-auto ">
+                
+                <div className="w-full md:w-1/3 mt-4 md:mt-0  text-black overflow-y-auto ">
                  
                   <div className="rounded-sm shadow-lg py-10 mb-5">
 
-                  <h1 className="text-2xl font-bold mb-2 ml-6">
+                  <h1 className="text-xl font-bold mb-2 ml-6">
                     {el.title }
                   </h1>
                   <div className=" max-w-full mx-6 bg-gray-400 opacity-10" style={{height:"1px"}}></div>
