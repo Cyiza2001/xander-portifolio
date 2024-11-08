@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import cert from "/images/certify.jpg";
 import { ImCross } from "react-icons/im";
-import { FaGreaterThan } from "react-icons/fa";
-import { FaLessThan } from "react-icons/fa6";
-
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import ScrollUp from "./ScrollUp";
 const DetailedPopup = ({ isOpen, onClose }) => {
 
   const details =[ 
-    {title:"MODERN JAVASCRIPT FUNDAMENTALS", id:"n578jy6lu4", certifier:"Rwanda ICT chamber", auth:"https://academy.ihuzo.rw/certificates/n578jy61u4", description:"This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices      ////////////      This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices"
+    {title:"MODERN JAVASCRIPT FUNDAMENTALS", id:"n578jy6lu4", certifier:"Rwanda ICT chamber", auth:"https://academy.ihuzo.rw/certificates/n578jy61u4", description:"This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices      ////////////      This certificate acknowledges a solid understanding of core JavaScript concepts and modern features essential for today's web development. It covers fundamental concepts such as variable scope, control flow, and asynchronous programming, as well as ES6+ features including arrow functions, destructuring, modules, and promises. With this certificate, the holder demonstrates proficiency in building scalable, interactive, and dynamic web applications using JavaScript’s latest standards and best practices //////////////////////////////////////////////////////////////////////////////////////////////////////// https://academy.ihuzo.rw/certificates/n578jy61u4" 
 
 
   }]
@@ -56,10 +56,10 @@ const DetailedPopup = ({ isOpen, onClose }) => {
             <ImCross />
           </button>
           <button className="absolute right-6 top-72 text-2xl text-white bg-black p-2">
-          <FaGreaterThan />
+          <IoIosArrowForward />
           </button>
           <button className="absolute left-6 top-72 text-2xl text-white bg-black p-2">
-          <FaLessThan />
+          <IoIosArrowBack />
           </button>
 
           <div className="flex flex-col md:flex-row pt-6  h-full overflow-auto ">
@@ -90,6 +90,7 @@ const DetailedPopup = ({ isOpen, onClose }) => {
                   <p className="text-sm text-gray-700 ">
                    {el.description}
                    </p>
+                   <ScrollUp scrollContainer={modalRef.current} />
                   </div>
                 </div>
               )
@@ -98,6 +99,7 @@ const DetailedPopup = ({ isOpen, onClose }) => {
           </div>
         </div>
       </div>
+     
     </div>
   );
 };
